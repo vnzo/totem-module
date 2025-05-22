@@ -147,13 +147,13 @@
         };
 
         mouse-left {
-            bindings = <&mp "LCLK">;
+            bindings = <&mkp MB1;
             key-positions = <27 16>;
             timeout-ms = <100>;
         };
 
         mouse-right {
-            // bindings = <&mkp RCLK>;
+            bindings = <&mkp MB2>;
             key-positions = <6 16>;
             timeout-ms = <100>;
         };
