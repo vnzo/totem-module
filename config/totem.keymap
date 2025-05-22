@@ -26,6 +26,7 @@
     tapping-term-ms = <170>;
     quick-tap-ms = <100>;
     flavor = "tap-preferred";
+    hold-trigger-delay = <200>;
 };
 
 / {
