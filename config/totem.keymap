@@ -50,47 +50,362 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        tab {
+            timeout-ms = <100>;
+            key-positions = <0 1>;
+            bindings = <&kp ESCAPE>;
+        };
+
+        qmark {
+            timeout-ms = <100>;
+            key-positions = <3 14>;
+            bindings = <&kp QUESTION>;
+        };
+
+        esc {
+            timeout-ms = <100>;
+            key-positions = <22 23>;
+            bindings = <&kp ESCAPE>;
+        };
+
+        del {
+            timeout-ms = <100>;
+            key-positions = <23 24>;
+            bindings = <&kp DEL>;
+        };
+
+        tab2 {
+            timeout-ms = <40>;
+            key-positions = <1 2>;
+            bindings = <&kp TAB>;
+        };
+
+        my-pc {
+            timeout-ms = <100>;
+            bindings = <&kp C_AL_MY_COMPUTER>;
+            key-positions = <19 31>;
+        };
+
+        tab3 {
+            timeout-ms = <100>;
+            bindings = <&kp TAB>;
+            key-positions = <7 8>;
+        };
+
+        s-tab {
+            timeout-ms = <100>;
+            bindings = <&kp RS(TAB)>;
+            key-positions = <8 9>;
+        };
+
+        l-shift-dn {
+            timeout-ms = <120>;
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <21 11>;
+        };
+
+        l-ctrl-dn {
+            timeout-ms = <120>;
+            bindings = <&kp LCTRL>;
+            key-positions = <12 22>;
+        };
+
+        r-shift-dn {
+            timeout-ms = <120>;
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <18 30>;
+        };
+
+        r-ctrl-dn {
+            timeout-ms = <120>;
+            bindings = <&kp RCTRL>;
+            key-positions = <17 29>;
+        };
+
+        vul-up {
+            bindings = <&kp C_VOLUME_UP>;
+            key-positions = <5 15>;
+            timeout-ms = <100>;
+        };
+
+        vul-dn {
+            bindings = <&kp C_VOLUME_DOWN>;
+            key-positions = <26 15>;
+            timeout-ms = <100>;
+        };
+
+        l-shift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <10 20>;
+            timeout-ms = <100>;
+        };
+
+        space2 {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <14 25>;
+            timeout-ms = <100>;
+        };
+
+        mouse-left {
+            bindings = <&mkp LCLK>;
+            key-positions = <27 16>;
+            timeout-ms = <100>;
+        };
+
+        mouse-right {
+            bindings = <&mkp RCLK>;
+            key-positions = <6 16>;
+            timeout-ms = <100>;
+        };
+
+        space3 {
+            bindings = <&kp SPACE>;
+            key-positions = <13 24>;
+            timeout-ms = <100>;
+        };
+
+        home {
+            bindings = <&kp HOME>;
+            key-positions = <1 11>;
+            timeout-ms = <100>;
+        };
+
+        end {
+            bindings = <&kp END>;
+            key-positions = <11 22>;
+            timeout-ms = <100>;
+        };
+
+        pageup {
+            bindings = <&kp PAGE_UP>;
+            key-positions = <8 18>;
+            timeout-ms = <100>;
+        };
+
+        pagedn {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <18 29>;
+            timeout-ms = <100>;
+        };
+
+        less {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <12 23>;
+            timeout-ms = <100>;
+        };
+
+        greater {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <17 28>;
+            timeout-ms = <100>;
+        };
+
+        shift-input {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <27 28>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
+        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
         base {
+            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+
+            label = "base";
+
+            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+            //             ┃     Q     ┃     H     ┃     O     ┃     U     ┃     ?     ┃   ┃     J     ┃     L     ┃     U     ┃     Y     ┃     ;     ┃
+            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+            //             ┃     Y     ┃     I     ┃     E     ┃     A     ┃     .     ┃   ┃     H     ┃     N     ┃     E     ┃     I     ┃     O     ┃
+            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+            // ┃     WIN   ┃     J     ┃     X     ┃     ,     ┃     K     ┃     '     ┃   ┃     K     ┃     M     ┃     ,     ┃     .     ┃     /     ┃     \     ┃
+            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+            //                                     ┃    ALT    ┃    BKSP   ┃   ENTER   ┃   ┃   SPACE   ┃    DEL    ┃    ALT    ┃
+            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+
             bindings = <
-                &kp Q  &kp W  &kp E             &kp R         &kp T    &kp Y      &kp U            &kp I          &kp O    &kp P
-                &kp A  &kp S  &kp D             &kp F         &kp G    &kp H      &kp J            &kp K          &kp L    &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C             &kp V         &kp B    &kp N      &kp M            &comma         &period  &question         &mo 2
-                              &kp LEFT_CONTROL  &kp LEFT_GUI  &mo 1    &kp SPACE  &kp RIGHT_SHIFT  &kp RIGHT_ALT
+                     &lt 7 Q  &kp H        &kp O               &mt LEFT_WIN U   &lt 10 QUESTION    &lt 10 G     &mt RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
+                     &kp Y    &kp I        &kp E               &mt LSHFT A      &lt 9 PERIOD       &kp D        &mt RSHFT T      &kp S            &kp N        &kp B
+&mt LEFT_WIN ESCAPE  &kp J    &mt LCTRL X  &mt LEFT_ALT COMMA  &kp K            &kp SQT            &kp W        &kp M            &mt RIGHT_ALT L  &mt RCTRL P  &kp V    &mt RIGHT_WIN C_AL_MY_COMPUTER
+                                           &lt 1 TAB           &lt 2 BACKSPACE  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
             >;
         };
 
-        nav_num {
-
+        L1-acs {
+            label = "acs";
             bindings = <
-                   &kp LA(BACKSPACE)   &kp BACKSPACE  &kp UP          &kp DELETE     &kp LA(DELETE)        &kp N5       &kp N6    &kp N7      &kp N8    &kp N9
-                   &kp LA(LEFT_ARROW)  &kp LEFT       &kp DOWN        &kp RIGHT      &kp LA(RIGHT)         &kp N0       &kp N1    &kp N2      &kp N3    &kp N4
-&kp LG(BACKSPACE)  &kp LG(UP_ARROW)    &kp LG(LEFT)   &kp LEFT_SHIFT  &kp LG(RIGHT)  &kp LG(DOWN_ARROW)    &kp PERCENT  &kp PLUS  &kp MINUS   &kp STAR  &kp FSLH  &kp CARET
-                                                      &trans          &trans         &trans                &kp EQUAL    &kp HASH  &kp DOLLAR
+                          &kp LC(LS(LA(Q)))  &kp LC(LS(LA(H)))  &kp LC(LS(LA(O)))      &kp LC(LS(LA(U)))  &kp LC(LS(LA(QUESTION)))    &kp LC(LS(LA(G)))         &kp LC(LS(LA(C)))         &kp LC(LS(LA(R)))         &kp LC(LS(LA(F)))  &kp LC(LS(LA(Z)))
+                          &kp LC(LS(LA(Y)))  &kp LC(LS(LA(I)))  &kp LC(LS(LA(E)))      &kp LC(LS(LA(A)))  &kp LC(LS(LA(DOT)))         &kp LC(LS(LA(D)))         &kp LC(LS(LA(T)))         &kp LC(LS(LA(S)))         &kp LC(LS(LA(N)))  &kp LC(LS(LA(B)))
+&kp LC(LS(LA(NUMBER_1)))  &kp LC(LS(LA(J)))  &kp LC(LS(LA(X)))  &kp LC(LS(LA(COMMA)))  &kp LC(LS(LA(K)))  &kp LC(LS(LA(SQT)))         &kp LC(LS(LA(W)))         &kp LC(LS(LA(M)))         &kp LC(LS(LA(L)))         &kp LC(LS(LA(P)))  &kp LC(LS(LA(V)))  &kp LC(LA(LS(NUMBER_5)))
+                                                                &trans                 &kp C_REWIND       &kp C_FAST_FORWARD          &kp LC(LS(LA(NUMBER_2)))  &kp LC(LS(LA(NUMBER_3)))  &kp LC(LS(LA(NUMBER_4)))
             >;
         };
 
-        device {
+        L2-edit {
+            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+
+            label = "edit";
+
+            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+            //             ┃           ┃           ┃     UP    ┃           ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃     +     ┃
+            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+            //             ┃   SHIFT   ┃   LEFT    ┃    DOWN   ┃   RIGHT   ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃
+            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+            // ┃           ┃           ┃   P UP    ┃  C LOCK   ┃  P DOWN   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃           ┃
+            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+            //                                     ┃           ┃    TAB    ┃    SPC    ┃   ┃    DEL    ┃     0     ┃           ┃
+            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F1   &kp F2   &kp F3   &kp F4   &kp F5
-       &none         &none         &none         &none         &bt BT_CLR      &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
-&none  &kp A         &none         &none         &none         &none           &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &none
-                                   &none         &none         &none           &none    &none    &none
+          &kp LC(Y)   &kp LC(C)  &kp UP_ARROW    &kp LA(LC(Z))  &kp LA(LS(Q))    &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8            &kp NUMBER_9  &kp PLUS
+          &kp LA(F4)  &kp LEFT   &kp DOWN        &kp RIGHT      &kp LC(F)        &kp KP_DIVIDE    &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6  &kp MINUS
+&kp HOME  &kp INS     &kp LC(X)  &kp LC(Z)       &kp LC(V)      &kp LS(INS)      &kp PERIOD       &kp NUMBER_1  &kp NUMBER_2            &kp NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
+                                 &kp C_PREVIOUS  &none          &kp C_NEXT       &kp EQUAL        &kp NUMBER_0  &kp LS(LA(LC(PERIOD)))
             >;
         };
-        extra1 {
-            status = "reserved";
+
+        L3-navi {
+            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+
+            label = "navi";
+
+            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+            //             ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ˆ     ┃     &     ┃     Ü     ┃     '     ┃     "     ┃
+            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+            //             ┃     Ä     ┃           ┃    SZ     ┃           ┃           ┃   ┃   MUTE    ┃   YEN     ┃   EURO    ┃  POUND    ┃     Ö     ┃
+            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+            // ┃           ┃  EMAIL1   ┃  EMAIL2   ┃           ┃           ┃           ┃   ┃   VOL-    ┃   VOL+    ┃   LAST    ┃   NEXT    ┃     \     ┃           ┃
+            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+            //                                     ┃           ┃    GIF    ┃    ADJ    ┃   ┃           ┃           ┃           ┃
+            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+
+            bindings = <
+                    &kp LG(V)      &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)          &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN     &kp F7               &kp F8           &kp F9  &kp F12
+                    &kp LC(W)      &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))  &kp PG_UP                  &kp HOME            &kp F4               &kp F5           &kp F6  &kp F11
+&kp LC(LS(ESCAPE))  &kp LC(LS(T))  &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)     &kp PAGE_DOWN              &kp END             &kp F1               &kp F2           &kp F3  &kp F10  &kp LS(LA(LC(F12)))
+                                                           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none                      &kp LS(LA(LC(F9)))  &kp LS(LA(LC(F10)))  &kp LS(LA(F11))
+            >;
         };
 
-        extra2 {
-            status = "reserved";
+        L4-punc {
+            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+
+            label = "punc";
+
+            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+            //             ┃   RESET   ┃ BT CLEAR  ┃  OUT TOG  ┃           ┃           ┃   ┃           ┃    F7     ┃    F8     ┃    F9     ┃    F12    ┃
+            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+            //             ┃ BOOTLOAD  ┃ BT NEXT   ┃           ┃           ┃           ┃   ┃           ┃    F4     ┃    F5     ┃    F6     ┃    F11    ┃
+            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+            // ┃           ┃           ┃ BT PREV   ┃           ┃           ┃           ┃   ┃           ┃    F1     ┃    F2     ┃    F3     ┃    F10    ┃           ┃
+            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+            //                                     ┃           ┃           ┃           ┃   ┃           ┃           ┃           ┃
+            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+
+            bindings = <
+                              &kp CARET          &kp DOUBLE_QUOTES  &kp EXCLAMATION        &kp LA(LC(SQT))       &kp LS(LG(S))    &kp LA(LC(PERIOD))  &kp LEFT_BRACKET          &kp HASH                   &kp RIGHT_BRACKET      &kp END
+                              &kp PIPE           &kp UNDERSCORE     &kp SEMICOLON          &kp SLASH             &kp AT_SIGN      &kp LEFT_BRACE      &kp LEFT_PARENTHESIS      &kp ASTERISK               &kp RIGHT_PARENTHESIS  &kp DOLLAR
+&kp LA(LC(NON_US_BACKSLASH))  &kp LA(LC(SLASH))  &kp AMPERSAND      &kp PERCENT            &kp NON_US_BACKSLASH  &kp GRAVE        &kp RIGHT_BRACE     &kp LESS_THAN             &kp HOME                   &kp GREATER_THAN       &kp TILDE   &kp LA(LC(COMMA))
+                                                                    &kp LA(LC(SEMICOLON))  &kp MINUS             &kp COLON        &none               &kp LA(LC(LEFT_BRACKET))  &kp LA(LC(RIGHT_BRACKET))
+            >;
         };
 
-        extra3 {
-            status = "reserved";
+        L5-hifn {
+            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+
+            label = "fn";
+
+            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+            //             ┃ NEXT FILE ┃ MARK IN   ┃ ROTATE    ┃ MARK OUT  ┃ SHOW SNAP ┃   ┃           ┃           ┃           ┃           ┃           ┃
+            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+            //             ┃ TVP II    ┃ LEFT      ┃ PAN       ┃ RIGHT     ┃ PLAY/FLIP ┃   ┃           ┃           ┃           ┃           ┃           ┃
+            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+            // ┃ FULLSCR   ┃ SHIFT     ┃ COPY      ┃ DELETE    ┃ PASTE     ┃ IMG MARK  ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+            //                                     ┃           ┃ UNDO/SAVE ┃  SEL/MOV  ┃   ┃           ┃           ┃           ┃
+            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+
+            bindings = <
+                 &kp F21  &kp F22  &kp F23          &kp F24          &kp LA(LC(F21))    &kp LA(LC(F22))  &kp LA(LC(F23))   &kp LA(LG(UP_ARROW))  &kp LS(F10)        &kp LA(LC(Z))
+                 &kp F17  &kp F18  &kp F19          &kp F20          &kp LA(LC(F20))    &mkp MB2         &kp LA(LG(LEFT))  &kp LA(LG(DOWN))      &kp LA(LG(RIGHT))  &mkp MB4
+&kp LA(LC(F13))  &kp F13  &kp F14  &kp F15          &kp F16          &kp CAPS           &mkp MB3         &mkp LCLK         &mkp MCLK             &mkp RCLK          &mkp MB5       &kp LA(LC(F19))
+                                   &kp LA(LC(F14))  &kp LA(LC(F15))  &kp LA(LC(F16))    &kp LA(LC(F17))  &none             &kp LA(LC(F18))
+            >;
+        };
+
+        L6-cs {
+            label = "cs";
+            bindings = <
+                      &kp LC(LS(Q))  &kp LC(LS(H))  &kp LC(LS(O))         &kp LC(LS(U))         &kp LC(LS(QUESTION))    &kp LC(LS(G))         &kp LC(LS(C))         &kp LC(LS(R))  &kp LC(LS(F))  &kp LC(LS(Z))
+                      &kp LC(LS(Y))  &kp LC(LS(I))  &kp LC(LS(E))         &kp LC(LS(A))         &kp LC(LS(DOT))         &kp LC(LS(D))         &kp LC(LS(T))         &kp LC(LS(S))  &kp LC(LS(N))  &kp LC(LS(B))
+&kp LC(LS(NUMBER_1))  &kp LC(LS(J))  &kp LC(LS(X))  &kp LC(LS(COMMA))     &kp LC(LS(K))         &kp LC(LS(SQT))         &kp LC(LS(W))         &kp LC(LS(M))         &kp LC(LS(L))  &kp LC(LS(P))  &kp LC(LS(V))  &kp LC(LS(NUMBER_7))
+                                                    &kp LC(LS(NUMBER_2))  &kp LC(LS(NUMBER_3))  &kp LC(LS(NUMBER_4))    &kp LC(LS(NUMBER_5))  &kp LC(LS(NUMBER_6))  &trans
+            >;
+        };
+
+        L7-pinky {
+            label = "as";
+            bindings = <
+                      &trans         &kp LS(LA(H))  &kp LS(LA(O))         &kp LS(LA(U))         &kp LS(LA(QUESTION))    &kp LS(LA(G))   &kp LS(LA(C))         &kp LS(LA(R))   &kp LS(LA(F))  &kp LS(LA(Z))
+                      &kp LS(LA(Y))  &kp LS(LA(I))  &kp LS(LA(E))         &kp LS(LA(A))         &kp LS(LA(DOT))         &kp LS(LA(D))   &kp LS(LA(T))         &kp LS(LA(S))   &kp LS(LA(N))  &kp LS(LA(B))
+&kp LS(LA(NUMBER_1))  &kp LS(LA(J))  &kp LS(LA(X))  &kp LS(LA(COMMA))     &kp LS(LA(K))         &kp LS(LA(SQT))         &kp LS(LA(W))   &kp LS(LA(M))         &kp LS(LA(L))   &kp LS(LA(P))  &kp LS(LA(V))  &kp LS(LA(NUMBER_8))
+                                                    &kp LS(LA(NUMBER_2))  &kp LS(LA(NUMBER_3))  &kp LS(LA(NUMBER_4))    &kp LS(LA(N5))  &kp LS(LA(NUMBER_6))  &kp LS(LA(N7))
+            >;
+        };
+
+        L8-pinky {
+            label = "ac";
+            bindings = <
+                      &kp LC(LA(Q))  &kp LC(LA(H))  &kp LC(LA(O))         &kp LC(LA(U))         &kp LC(LA(QUESTION))    &kp LC(LA(G))         &kp LC(LA(C))         &kp LC(LA(R))         &kp LC(LA(A))  &trans
+                      &kp LC(LA(Y))  &kp LC(LA(I))  &kp LC(LA(E))         &kp LC(LA(A))         &kp LC(LA(DOT))         &kp LC(LA(D))         &kp LC(LA(T))         &kp LC(LA(S))         &kp LC(LA(N))  &kp LC(LA(B))
+&kp LC(LA(NUMBER_1))  &kp LC(LA(J))  &kp LC(LA(X))  &kp LC(LA(COMMA))     &kp LC(LA(K))         &kp LC(LA(SQT))         &kp LC(LA(W))         &kp LC(LA(M))         &kp LC(LA(L))         &kp LC(LA(P))  &kp LC(LA(V))  &kp LA(LC(NUMBER_8))
+                                                    &kp LC(LA(NUMBER_2))  &kp LC(LA(NUMBER_3))  &kp LC(LA(NUMBER_4))    &kp LC(LA(NUMBER_5))  &kp LC(LA(NUMBER_6))  &kp LC(LA(NUMBER_7))
+            >;
+        };
+
+        L9-edit+ {
+            label = "edit+";
+            bindings = <
+                        &kp LC(LS(LA(LG(Q))))  &kp LC(LS(LA(LG(H))))  &kp LC(LS(LA(LG(O))))      &kp LC(LS(LA(LG(U))))   &kp LC(LS(LA(LG(QUESTION))))    &kp LC(LS(LA(LG(G))))   &kp LC(LS(LA(LG(C))))    &kp LC(LS(LA(LG(R))))    &kp LC(LS(LA(LG(F))))  &kp LC(LS(LA(LG(Z))))
+                        &kp LC(LS(LA(LG(Y))))  &kp LC(LS(LA(LG(I))))  &kp LC(LS(LA(LG(E))))      &kp LC(LS(LA(LG(A))))   &trans                          &kp LC(LS(LA(LG(D))))   &kp LC(LS(LA(LG(T))))    &kp LC(LS(LA(LG(S))))    &kp LC(LS(LA(LG(N))))  &kp LC(LS(LA(LG(B))))
+&kp LC(LS(LG(LA(F5))))  &kp LC(LS(LA(LG(J))))  &kp LC(LS(LA(LG(X))))  &kp LC(LS(LA(LG(COMMA))))  &kp LC(LS(LA(LG(K))))   &kp LC(LS(LA(LG(SQT))))         &kp LC(LS(LA(LG(W))))   &kp LC(LS(LA(LG(M))))    &kp LC(LS(LA(LG(L))))    &kp LC(LS(LA(LG(P))))  &kp LC(LS(LA(LG(V))))  &kp LC(LS(LG(LA(F12))))
+                                                                      &kp LC(LS(LG(LA(F6))))     &kp LS(LA(LC(LG(F7))))  &kp LC(LS(LA(LG(F8))))          &kp LC(LS(LA(LG(F9))))  &kp LS(LA(LC(LG(F10))))  &kp LS(LA(LC(LG(F11))))
+            >;
+        };
+
+        L10-blue {
+            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+
+            label = "blue";
+
+            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+            //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
+            //             ┃ SOLO      ┃ TOGGLE IN ┃ RESET ROT ┃ TOGGLE OUT┃ TAKE SNAP ┃   ┃           ┃           ┃           ┃           ┃           ┃
+            //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
+            //             ┃ ---       ┃ LAST KEY  ┃ NEW KEY   ┃ NEXT KEY  ┃ ENTER     ┃   ┃           ┃           ┃           ┃           ┃           ┃
+            // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
+            // ┃           ┃ FULLSCR   ┃ CPY2BRUSH ┃ DEL HEAD  ┃ PSTinPLACE┃ BOOK MARK ┃   ┃           ┃           ┃           ┃           ┃           ┃           ┃
+            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+            //                                     ┃           ┃ REDO/SAV1 ┃TRANS/WARP ┃   ┃           ┃           ┃           ┃
+            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
+
+            bindings = <
+                &kp CAPS       &bt BT_PRV     &bt BT_CLR     &bt BT_NXT        &trans           &kp KP_MULTIPLY          &kp KP_NUMBER_7  &kp KP_NUMBER_8          &kp KP_NUMBER_9  &kp KP_PLUS
+                &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3     &bt BT_DISC 4    &kp KP_DIVIDE            &kp KP_NUMBER_4  &kp KP_NUMBER_5          &kp KP_NUMBER_6  &kp KP_MINUS
+&bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3      &bt BT_SEL 4     &kp KP_DOT               &kp KP_NUMBER_1  &kp KP_NUMBER_2          &kp KP_NUMBER_3  &kp KP_COMMA  &kp KP_ENTER
+                                              &kp C_POWER    &kp C_PLAY_PAUSE  &kp KP_NUM       &kp KP_LEFT_PARENTHESIS  &kp KP_NUMBER_0  &kp KP_LEFT_PARENTHESIS
+            >;
         };
     };
 
