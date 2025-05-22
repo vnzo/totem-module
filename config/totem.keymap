@@ -331,9 +331,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                              &kp CARET          &kp DOUBLE_QUOTES  &kp EXCLAMATION        &kp LA(LC(SQT))       &kp LS(LG(S))    &trans           &kp LEFT_BRACKET          &kp HASH                   &kp RIGHT_BRACKET      &kt LEFT_ALT
+                              &kp CARET          &kp DOUBLE_QUOTES  &kp EXCLAMATION        &kp LA(LC(SQT))       &kp LS(LG(S))    &trans           &kp LEFT_BRACKET          &kp HASH                   &kp RIGHT_BRACKET      &key_repeat
                               &kp PIPE           &kp UNDERSCORE     &kp SEMICOLON          &kp SLASH             &kp AT_SIGN      &kp LEFT_BRACE   &kp LEFT_PARENTHESIS      &kp ASTERISK               &kp RIGHT_PARENTHESIS  &kp DOLLAR
-&kp LA(LC(NON_US_BACKSLASH))  &kp LA(LC(SLASH))  &kp AMPERSAND      &kp PERCENT            &kp NON_US_BACKSLASH  &kp GRAVE        &kp RIGHT_BRACE  &kp LESS_THAN             &kp LA(LC(PERIOD))         &kp GREATER_THAN       &kp TILDE     &kp LA(LC(COMMA))
+&kp LA(LC(NON_US_BACKSLASH))  &kp LA(LC(SLASH))  &kp AMPERSAND      &kp PERCENT            &kp NON_US_BACKSLASH  &kp GRAVE        &kp RIGHT_BRACE  &kp LESS_THAN             &kp LA(LC(PERIOD))         &kp GREATER_THAN       &kp TILDE    &kp LA(LC(COMMA))
                                                                     &kp LA(LC(SEMICOLON))  &kp MINUS             &kp COLON        &none            &kp LA(LC(LEFT_BRACKET))  &kp LA(LC(RIGHT_BRACKET))
             >;
         };
@@ -355,9 +355,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                 &kp F21  &kp F22  &kp F23          &kp F24          &kp LA(LC(F21))    &kp LA(LC(F22))         &kp LA(LC(F23))   &kp LA(LG(UP_ARROW))    &kp LS(F10)             &key_repeat
+                 &kp F21  &kp F22  &kp F23          &kp F24          &kp LA(LC(F21))    &kp LA(LC(F22))         &kp LA(LC(F23))   &kp LA(LG(UP_ARROW))    &kp LS(F10)             &kt LEFT_ALT
                  &kp F17  &kp F18  &kp F19          &kp F20          &kp LA(LC(F20))    &kp LS(LA(LC(LG(F2))))  &kp LA(LG(LEFT))  &kp LA(LG(DOWN))        &kp LA(LG(RIGHT))       &mkp MB4
-&kp LA(LC(F13))  &kp F13  &kp F14  &kp F15          &kp F16          &kp CAPS           &kp LS(LA(LC(LG(F1))))  &mkp LCLK         &kp LS(LA(LC(LG(F3))))  &kp LS(LA(LC(LG(F4))))  &mkp MB5     &kp LA(LC(F19))
+&kp LA(LC(F13))  &kp F13  &kp F14  &kp F15          &kp F16          &kp CAPS           &kp LS(LA(LC(LG(F1))))  &mkp LCLK         &kp LS(LA(LC(LG(F3))))  &kp LS(LA(LC(LG(F4))))  &mkp MB5      &kp LA(LC(F19))
                                    &kp LA(LC(F14))  &kp LA(LC(F15))  &kp LA(LC(F16))    &kp LA(LC(F17))         &none             &kp LA(LC(F18))
             >;
         };
