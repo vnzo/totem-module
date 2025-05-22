@@ -146,17 +146,17 @@
             timeout-ms = <100>;
         };
 
-        mouse-left {
-            bindings = <&mkp MB1;
-            key-positions = <27 16>;
-            timeout-ms = <100>;
-        };
+        // mouse-left {
+            // bindings = <&mkp MB1;
+            // key-positions = <27 16>;
+            // timeout-ms = <100>;
+        // };
 
-        mouse-right {
-            bindings = <&mkp MB2>;
-            key-positions = <6 16>;
-            timeout-ms = <100>;
-        };
+        // mouse-right {
+            // bindings = <&mkp MB2>;
+            // key-positions = <6 16>;
+            // timeout-ms = <100>;
+        // };
 
         space3 {
             bindings = <&kp SPACE>;
