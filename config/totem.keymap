@@ -147,16 +147,17 @@
             timeout-ms = <100>;
         };
 
-        // mouse-left {
-        // bindings = <&mkp MB1;
-        // key-positions = <27 16>;
-        // timeout-ms = <100>;
-        // };
-        // mouse-right {
-        // bindings = <&mkp MB2>;
-        // key-positions = <6 16>;
-        // timeout-ms = <100>;
-        // };
+        mouse-left {
+            bindings = <&mkp LCLK>;
+            key-positions = <27 16>;
+            timeout-ms = <100>;
+        };
+
+        mouse-right {
+            bindings = <&mkp RCLK>;
+            key-positions = <6 16>;
+            timeout-ms = <100>;
+        };
 
         space3 {
             bindings = <&kp SPACE>;
@@ -335,8 +336,8 @@
 
             bindings = <
                  &kp F21  &kp F22  &kp F23          &kp F24          &kp LA(LC(F21))    &kp LA(LC(F22))  &kp LA(LC(F23))   &kp LA(LG(UP_ARROW))  &kp LS(F10)        &kp LA(LC(Z))
-                 &kp F17  &kp F18  &kp F19          &kp F20          &kp LA(LC(F20))    &kp A            &kp LA(LG(LEFT))  &kp LA(LG(DOWN))      &kp LA(LG(RIGHT))  &kp A
-&kp LA(LC(F13))  &kp F13  &kp F14  &kp F15          &kp F16          &kp CAPS           &kp A            &mkp LCLK         &mkp MCLK             &mkp RCLK          &kp A          &kp LA(LC(F19))
+                 &kp F17  &kp F18  &kp F19          &kp F20          &kp LA(LC(F20))    &mkp MB2         &kp LA(LG(LEFT))  &kp LA(LG(DOWN))      &kp LA(LG(RIGHT))  &mkp MB4
+&kp LA(LC(F13))  &kp F13  &kp F14  &kp F15          &kp F16          &kp CAPS           &mkp MB3         &mkp LCLK         &mkp MCLK             &mkp RCLK          &mkp MB5       &kp LA(LC(F19))
                                    &kp LA(LC(F14))  &kp LA(LC(F15))  &kp LA(LC(F16))    &kp LA(LC(F17))  &none             &kp LA(LC(F18))
             >;
         };
@@ -406,3 +407,4 @@
         };
     };
 };
+
