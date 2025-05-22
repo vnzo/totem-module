@@ -147,7 +147,7 @@
         };
 
         mouse-left {
-            bindings = <&mkp LCLK>;
+            // bindings = <&mkp "LCLK">;
             key-positions = <27 16>;
             timeout-ms = <100>;
         };
