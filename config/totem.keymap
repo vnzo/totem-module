@@ -307,10 +307,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp LG(V)      &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)           &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN     &kp F7               &kp F8           &kp F9  &kp F12
-                    &kp LC(W)      &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))   &kp PG_UP                  &kp HOME            &kp F4               &kp F5           &kp F6  &kp F11
-&kp LC(LS(ESCAPE))  &kp LC(LS(T))  &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)      &kp PAGE_DOWN              &kp END             &kp F1               &kp F2           &kp F3  &kp F10  &kp LS(LA(LC(F12)))
-                                                           &kp C_REWIND       &kp C_FAST_FORWARD  &none                      &kp LS(LA(LC(F9)))  &kp LS(LA(LC(F10)))  &kp LS(LA(F11))
+                    &kp LG(V)      &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)   &kp LG(D)           &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN     &kp F7               &kp F8           &kp F9  &kp F12
+                    &kp LC(W)      &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))    &kp LC(LG(RIGHT))   &kp PG_UP                  &kp HOME            &kp F4               &kp F5           &kp F6  &kp F11
+&kp LC(LS(ESCAPE))  &kp LC(LS(T))  &kp LA(LS(ESCAPE))      &kp LC(LG(F4))      &kp LA(ESCAPE)      &kp PAGE_DOWN              &kp END             &kp F1               &kp F2           &kp F3  &kp F10  &kp LS(LA(LC(F12)))
+                                                           &kp LS(LA(LC(F7)))  &kp LS(LA(LC(F8)))  &none                      &kp LS(LA(LC(F9)))  &kp LS(LA(LC(F10)))  &kp LS(LA(F11))
             >;
         };
 
@@ -422,7 +422,7 @@
                 &out OUT_TOG   &bt BT_PRV     &bt BT_CLR     &bt BT_NXT     &trans           &kp KP_MULTIPLY          &kp KP_NUMBER_7  &kp KP_NUMBER_8          &kp KP_NUMBER_9  &kp KP_PLUS
                 &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_DIVIDE            &kp KP_NUMBER_4  &kp KP_NUMBER_5          &kp KP_NUMBER_6  &kp KP_MINUS
 &bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &kp KP_DOT               &kp KP_NUMBER_1  &kp KP_NUMBER_2          &kp KP_NUMBER_3  &kp KP_COMMA  &kp KP_ENTER
-                                              &kp C_POWER    &tog 11        &kp KP_NUM       &kp KP_LEFT_PARENTHESIS  &kp KP_NUMBER_0  &kp KP_LEFT_PARENTHESIS
+                                              &kp C_POWER    &to 11         &kp KP_NUM       &kp KP_LEFT_PARENTHESIS  &kp KP_NUMBER_0  &kp KP_LEFT_PARENTHESIS
             >;
         };
 
@@ -431,7 +431,7 @@
         &trans  &trans  &trans  &trans  &trans         &trans          &trans          &mmv MOVE_UP     &trans           &trans
         &trans  &trans  &trans  &trans  &trans         &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MB4
 &trans  &trans  &trans  &trans  &trans  &trans         &msc SCRL_DOWN  &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB5  &trans
-                        &trans  &trans  &bootloader    &bootloader     &msc SCRL_LEFT  &msc SCRL_RIGHT
+                        &trans  &to 0   &bootloader    &bootloader     &msc SCRL_LEFT  &msc SCRL_RIGHT
             >;
         };
     };
