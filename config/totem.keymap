@@ -310,7 +310,7 @@
                     &kp LG(V)      &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)          &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN     &kp F7               &kp F8           &kp F9  &kp F12
                     &kp LC(W)      &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))  &kp PG_UP                  &kp HOME            &kp F4               &kp F5           &kp F6  &kp F11
 &kp LC(LS(ESCAPE))  &kp LC(LS(T))  &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)     &kp PAGE_DOWN              &kp END             &kp F1               &kp F2           &kp F3  &kp F10  &kp LS(LA(LC(F12)))
-                                                           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none                      &kp LS(LA(LC(F9)))  &kp LS(LA(LC(F10)))  &kp LS(LA(F11))
+                                                           &kp C_VOLUME_UP    &kp C_PLAY_PAUSE   &none                      &kp LS(LA(LC(F9)))  &kp LS(LA(LC(F10)))  &kp LS(LA(F11))
             >;
         };
 
@@ -428,10 +428,10 @@
 
         L11-mouse {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans          &trans          &mmv MOVE_UP     &trans           &trans
-        &trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MB4
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB5  &trans
-                        &trans  &trans  &trans    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT
+        &trans  &trans  &trans  &trans  &trans         &trans          &trans          &mmv MOVE_UP     &trans           &trans
+        &trans  &trans  &trans  &trans  &trans         &msc SCRL_UP    &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MB4
+&trans  &trans  &trans  &trans  &trans  &trans         &msc SCRL_DOWN  &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB5  &trans
+                        &trans  &trans  &bootloader    &bootloader     &msc SCRL_LEFT  &msc SCRL_RIGHT
             >;
         };
     };
@@ -440,8 +440,13 @@
         compatible = "zmk,conditional-layers";
 
         layer-mouse {
-            if-layers = <1 2>;
+            if-layers = <2 3>;
             then-layer = <11>;
+        };
+
+        test-l6 {
+            if-layers = <2 3>;
+            then-layer = <6>;
         };
     };
 };
