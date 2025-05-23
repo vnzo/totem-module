@@ -436,17 +436,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        layer-mouse {
-            if-layers = <2 3>;
-            then-layer = <11>;
-        };
-
-        test-l6 {
-            if-layers = <2 3>;
-            then-layer = <6>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
