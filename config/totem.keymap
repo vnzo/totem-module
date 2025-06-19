@@ -228,8 +228,7 @@
 
         tol0 {
             bindings = <&tog 11>;
-            key-positions = <4 33>;
-            layers = <11>;
+            key-positions = <33 3>;
         };
     };
 
@@ -428,22 +427,22 @@
                 &out OUT_TOG   &bt BT_PRV     &bt BT_CLR     &bt BT_NXT     &trans           &kp KP_MULTIPLY          &kp KP_NUMBER_7  &kp KP_NUMBER_8          &kp KP_NUMBER_9  &kp KP_PLUS
                 &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_DIVIDE            &kp KP_NUMBER_4  &kp KP_NUMBER_5          &kp KP_NUMBER_6  &kp KP_MINUS
 &bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &kp KP_DOT               &kp KP_NUMBER_1  &kp KP_NUMBER_2          &kp KP_NUMBER_3  &kp KP_COMMA  &kp KP_ENTER
-                                              &kp C_POWER    &tog 11        &kp KP_NUM       &kp KP_LEFT_PARENTHESIS  &kp KP_NUMBER_0  &kp KP_LEFT_PARENTHESIS
+                                              &kp C_POWER    &tog 12        &kp KP_NUM       &kp KP_LEFT_PARENTHESIS  &kp KP_NUMBER_0  &kp KP_LEFT_PARENTHESIS
             >;
         };
 
         L11-qwerty {
             bindings = <
-            &kp Q  &kp W  &kp E    &kp R      &kp T        &kp Y      &kp U       &kp I      &kp O       &kp P
-            &kp A  &kp S  &kp D    &kp F      &kp G        &kp H      &kp J       &kp K      &kp L       &kp SEMICOLON
-&kp ESCAPE  &kp Z  &kp X  &kp C    &kp V      &kp B        &kp N      &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &to 0
-                          &kp TAB  &kp SPACE  &kp ENTER    &kp SPACE  &kp DELETE  &trans
+            &kp Q  &kp W  &kp E            &kp R        &kp T     &kp Y   &kp U       &kp I      &kp O       &kp P
+            &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
+&kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &to 0
+                          &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &trans
             >;
         };
 
         L12-mouse {
             bindings = <
-        &trans  &trans  &trans       &trans        &trans                &trans          &trans           &mmv MOVE_UP    &tog 12          &trans
+        &trans  &trans  &trans       &trans        &trans                &trans          &trans           &mmv MOVE_UP    &to 0            &to 12
         &trans  &trans  &trans       &trans        &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
 &trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5  &trans
                         &bootloader  &kp C_REWIND  &kp C_FAST_FORWARD    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
