@@ -93,10 +93,10 @@
             bindings = <&kp DEL>;
         };
 
-        esc2 {
+        tab2 {
             timeout-ms = <40>;
             key-positions = <1 2>;
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp TAB>;
         };
 
         my-pc {
