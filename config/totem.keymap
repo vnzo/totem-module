@@ -61,17 +61,7 @@
             compatible = "zmk,behavior-macro";
             label = "MY_PERIOD_MACRO";
             #binding-cells = <0>;
-            bindings = <
-                // Action 1: Type a period (DOT)
-                &kp DOT
-                // Action 2: Type a new line (RET)
-                &kp RET
-                // Action 3: Type a tab
-                &kp TAB
-                // Action 4: Activate a sticky left shift (LSHFT).
-                // The shift will be active until the next key is pressed.
-                &sk LSHFT
-            >;
+            bindings = <&kp DOT &kp RET &kp TAB &sk LSHFT>;
         };
     };
 
@@ -81,7 +71,7 @@
         tab {
             timeout-ms = <100>;
             key-positions = <0 1>;
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp TAB>;
         };
 
         qmark {
@@ -90,10 +80,10 @@
             bindings = <&kp QUESTION>;
         };
 
-        combo_period {
+        esc {
             timeout-ms = <50>;
             key-positions = <22 23>; // This assumes position 2 and 3 on your keyboard. Adjust as needed.
-            bindings = <&my_period_macro>;
+            bindings = <&kp ESCAPE>;
             layers = <0>; // This combo will only work on layer 0.
         };
 
