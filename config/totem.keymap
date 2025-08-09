@@ -21,7 +21,7 @@
     quick-tap-ms = <200>;
 };
 
-&sk { release-after-ms = <1200>; };
+&sk { release-after-ms = <600000>; };
 
 &mt {
     tapping-term-ms = <170>;
@@ -61,7 +61,7 @@
             compatible = "zmk,behavior-macro";
             label = "MY_PERIOD_MACRO";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp RET &kp TAB &sk LSHFT>;
+            bindings = <&kp DOT &kp RET &sk LSHFT>;
         };
     };
 
@@ -237,6 +237,11 @@
         tol0 {
             bindings = <&tog 11>;
             key-positions = <33 3>;
+        };
+
+        new-para {
+            bindings = <&my_period_macro>;
+            key-positions = <21 22>;
         };
     };
 
