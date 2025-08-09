@@ -73,10 +73,10 @@
             bindings = <&kp QUESTION>;
         };
 
-        esc {
+        test-macro {
             timeout-ms = <100>;
             key-positions = <22 23>;
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp TAB>;
         };
 
         del {
@@ -85,10 +85,10 @@
             bindings = <&kp DEL>;
         };
 
-        tab2 {
+        esc2 {
             timeout-ms = <40>;
             key-positions = <1 2>;
-            bindings = <&kp TAB>;
+            bindings = <&kp ESCAPE>;
         };
 
         my-pc {
