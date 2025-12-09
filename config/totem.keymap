@@ -243,6 +243,12 @@
             bindings = <&my_period_macro>;
             key-positions = <21 22>;
         };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
+            layers = <11>;
+        };
     };
 
     keymap {
@@ -270,7 +276,7 @@
                      &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U   &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
                      &kp Y    &kp I        &kp E               &hm LSHFT A      &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S            &kp N        &kp B
 &mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K            &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L  &hm RCTRL P  &kp V    &mt RIGHT_WIN C_AL_MY_COMPUTER
-                                           &lt 1 TAB           &lt 2 BACKSPACE  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
+                                           &lt 1 SPACE         &lt 2 BACKSPACE  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
             >;
         };
 
