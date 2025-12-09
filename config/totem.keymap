@@ -105,16 +105,17 @@
             key-positions = <19 31>;
         };
 
-        tab3 {
+        home2 {
             timeout-ms = <100>;
-            bindings = <&kp TAB>;
+            bindings = <&kp HOME>;
             key-positions = <7 8>;
         };
 
-        s-tab {
+        end2 {
             timeout-ms = <100>;
-            bindings = <&kp RS(TAB)>;
+            bindings = <&kp END>;
             key-positions = <8 9>;
+            layers = <0>;
         };
 
         l-shift-dn {
@@ -452,9 +453,9 @@
 
         L11-mouse {
             bindings = <
-        &trans  &trans  &trans       &trans        &trans                &trans          &tog 11          &mmv MOVE_UP    &trans           &trans
+        &trans  &trans  &trans       &trans        &trans                &trans          &tog 11          &mmv MOVE_UP    &kp SPACE        &kp BACKSPACE
         &trans  &trans  &trans       &trans        &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
-&trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5  &trans
+&trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5       &trans
                         &bootloader  &kp C_REWIND  &kp C_FAST_FORWARD    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
             >;
         };
