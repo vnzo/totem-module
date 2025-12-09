@@ -235,7 +235,7 @@
         };
 
         tol0 {
-            bindings = <&tog 11>;
+            bindings = <&tog 12>;
             key-positions = <33 3>;
         };
 
@@ -267,7 +267,7 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U   &lt 10 QUESTION    &lt 12 G     &hm RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
+                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U   &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
                      &kp Y    &kp I        &kp E               &hm LSHFT A      &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S            &kp N        &kp B
 &mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K            &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L  &hm RCTRL P  &kp V    &mt RIGHT_WIN C_AL_MY_COMPUTER
                                            &lt 1 TAB           &lt 2 BACKSPACE  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
@@ -444,21 +444,21 @@
             >;
         };
 
-        L11-qwerty {
+        L11-mouse {
+            bindings = <
+        &trans  &trans  &trans       &trans        &trans                &trans          &tog 11          &mmv MOVE_UP    &trans           &trans
+        &trans  &trans  &trans       &trans        &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
+&trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5  &trans
+                        &bootloader  &kp C_REWIND  &kp C_FAST_FORWARD    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
+            >;
+        };
+
+        L12-game {
             bindings = <
             &kp Q  &kp W  &kp E            &kp R        &kp T     &kp Y   &kp U       &kp I      &kp O       &kp P
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
 &kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &to 0
-                          &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &trans
-            >;
-        };
-
-        L12-mouse {
-            bindings = <
-        &trans  &trans  &trans       &trans        &trans                &trans          &trans           &mmv MOVE_UP    &to 0            &to 12
-        &trans  &trans  &trans       &trans        &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
-&trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5  &trans
-                        &bootloader  &kp C_REWIND  &kp C_FAST_FORWARD    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
+                          &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
             >;
         };
     };
