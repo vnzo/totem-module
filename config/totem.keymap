@@ -277,7 +277,7 @@
                      &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U   &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
                      &kp Y    &kp I        &kp E               &hm LSHFT A      &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S            &kp N        &kp B
 &mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K            &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L  &hm RCTRL P  &kp V    &mt RIGHT_WIN C_AL_MY_COMPUTER
-                                           &lt 1 SPACE         &lt 2 BACKSPACE  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
+                                           &lt 1 TAB           &lt 2 BACKSPACE  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
             >;
         };
 
@@ -356,10 +356,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                              &kp CARET          &kp DOUBLE_QUOTES  &kp EXCLAMATION        &kp LA(LC(SQT))       &kp LS(LG(S))    &trans           &kp LEFT_BRACKET          &kp HASH                   &kp RIGHT_BRACKET      &key_repeat
-                              &kp PIPE           &kp UNDERSCORE     &kp SEMICOLON          &kp SLASH             &kp AT_SIGN      &kp LEFT_BRACE   &kp LEFT_PARENTHESIS      &kp ASTERISK               &kp RIGHT_PARENTHESIS  &kp DOLLAR
-&kp LA(LC(NON_US_BACKSLASH))  &kp LA(LC(SLASH))  &kp AMPERSAND      &kp PERCENT            &kp NON_US_BACKSLASH  &kp GRAVE        &kp RIGHT_BRACE  &kp LESS_THAN             &kp LA(LC(PERIOD))         &kp GREATER_THAN       &kp TILDE    &kp LA(LC(COMMA))
-                                                                    &kp LA(LC(SEMICOLON))  &kp MINUS             &kp COLON        &none            &kp LA(LC(LEFT_BRACKET))  &kp LA(LC(RIGHT_BRACKET))
+                              &kp CARET          &kp DOUBLE_QUOTES  &kp EXCLAMATION        &kp LA(LC(SQT))       &kp LS(LG(S))    &kp LS(PRINTSCREEN)  &kp LEFT_BRACKET          &kp HASH                   &kp RIGHT_BRACKET      &key_repeat
+                              &kp PIPE           &kp UNDERSCORE     &kp SEMICOLON          &kp SLASH             &kp AT_SIGN      &kp LEFT_BRACE       &kp LEFT_PARENTHESIS      &kp ASTERISK               &kp RIGHT_PARENTHESIS  &kp DOLLAR
+&kp LA(LC(NON_US_BACKSLASH))  &kp LA(LC(SLASH))  &kp AMPERSAND      &kp PERCENT            &kp NON_US_BACKSLASH  &kp GRAVE        &kp RIGHT_BRACE      &kp LESS_THAN             &kp LA(LC(PERIOD))         &kp GREATER_THAN       &kp TILDE    &kp LA(LC(COMMA))
+                                                                    &kp LA(LC(SEMICOLON))  &kp MINUS             &kp COLON        &none                &kp LA(LC(LEFT_BRACKET))  &kp LA(LC(RIGHT_BRACKET))
             >;
         };
 
