@@ -39,6 +39,42 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+
+        /* TAP-DANCE: 1 tap = Tab, 2 taps = Caps Lock */
+        td_tab: tap_dance_tab {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp TAB>, <&kp CAPS>;
+        };
+
+        /* MOD-MORPH: Backspace that becomes Delete when Shift is held */
+        /* This solves your Shift+Tab worry—you can keep Shift+Tab functional! */
+        bs_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        /* HOLD-TAP (Layer/Repeat): Tap = BSPC, Hold = Layer 2 */
+        /* This includes 'quick-tap-ms' to allow the repeat-on-hold you like! */
+        lt_repeat: layer_tap_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>; // This enables the "double-tap-and-hold to repeat"
+            bindings = <&mo>, <&kp>;
+        };
+
+        /* MOD-MORPH: Dot on tap, Colon on Shift+Dot */
+        dot_col: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
