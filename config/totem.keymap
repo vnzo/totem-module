@@ -41,6 +41,7 @@
         };
 
         /* TAP-DANCE: 1 tap = Tab, 2 taps = Caps Lock */
+
         td_tab: tap_dance_tab {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -50,15 +51,18 @@
 
         /* MOD-MORPH: Backspace that becomes Delete when Shift is held */
         /* This solves your Shift+Tab worry—you can keep Shift+Tab functional! */
+
         bs_del: backspace_delete {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp DEL>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         /* HOLD-TAP (Layer/Repeat): Tap = BSPC, Hold = Layer 2 */
         /* This includes 'quick-tap-ms' to allow the repeat-on-hold you like! */
+
         lt_repeat: layer_tap_repeat {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -69,10 +73,12 @@
         };
 
         /* MOD-MORPH: Dot on tap, Colon on Shift+Dot */
+
         dot_col: dot_colon {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp COLON>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -490,7 +496,7 @@
         L11-mouse {
             bindings = <
         &trans  &trans  &trans       &trans        &trans                &trans          &tog 11          &mmv MOVE_UP    &kp SPACE        &kp BACKSPACE
-        &trans  &trans  &trans       &trans        &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
+        &trans  &trans  &td_tab      &bs_del       &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
 &trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5       &trans
                         &bootloader  &kp C_REWIND  &kp C_FAST_FORWARD    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
             >;
