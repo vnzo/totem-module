@@ -85,7 +85,7 @@
         td_media_up: td_media_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&kp C_VOLUME_UP>, <&kp C_NEXT>;
 
             label = "TD_MEDIA_UP";
@@ -94,27 +94,29 @@
         td_media_down: td_media_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>;
 
             label = "TD_MEDIA_DOWN";
 
-/* 1. The Tap-Dance (The Actions) */
-td_win: win_tap_dance {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>; 
-    bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 12>;
-};
+            /* 1. The Tap-Dance (The Actions) */
 
-/* 2. The Hold-Tap (The Logic) */
-ht_win: hold_tap_win {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    bindings = <&kp>, <&td_win>; 
-};
+            td_win: win_tap_dance {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <300>;
+                bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 12>;
+            };
+
+            /* 2. The Hold-Tap (The Logic) */
+
+            ht_win: hold_tap_win {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "tap-preferred";
+                tapping-term-ms = <200>;
+                bindings = <&kp>, <&td_win>;
+            };
 
             /* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
 
@@ -134,7 +136,9 @@ ht_win: hold_tap_win {
                 flavor = "tap-preferred";
                 tapping-term-ms = <200>;
                 bindings = <&mo>, <&bs_spc>;
- /* Hold switches layer, Tap triggers the Morph */
+
+                /* Hold switches layer, Tap triggers the Morph */
+
                 quick-tap-ms = <200>;
             };
         };
