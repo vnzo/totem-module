@@ -141,23 +141,26 @@
 
                 quick-tap-ms = <200>;
             };
-/* 1. The Tap-Dance (Tuned for fast double-taps) */
-td_tab_media: tab_play_pause {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <200>; // Fast window for the double-tap
-    bindings = <&kp TAB>, <&kp C_PP>;
-};
 
-/* 2. The Hold-Tap (Tuned for slow navigation) */
-lt_tab: layer_hold_tab_dance {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "tap-preferred"; // Prioritizes the Tab/Dance over the Layer
-    tapping-term-ms = <250>;   // Must hold for 250ms to trigger Layer 1
-    quick-tap-ms = <200>;      // Allows slow-but-repeated Tabbing
-    bindings = <&mo>, <&td_tab_media>;
-};
+            /* 1. The Tap-Dance (Tuned for fast double-taps) */
+
+            td_tab_media: tab_play_pause {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>; // Fast window for the double-tap
+                bindings = <&kp TAB>, <&kp C_PP>;
+            };
+
+            /* 2. The Hold-Tap (Tuned for slow navigation) */
+
+            lt_tab: layer_hold_tab_dance {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "tap-preferred"; // Prioritizes the Tab/Dance over the Layer
+                tapping-term-ms = <250>;   // Must hold for 250ms to trigger Layer 1
+                quick-tap-ms = <200>;      // Allows slow-but-repeated Tabbing
+                bindings = <&mo>, <&td_tab_media>;
+            };
         };
     };
 
@@ -397,7 +400,7 @@ lt_tab: layer_hold_tab_dance {
                      &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
                      &kp Y    &kp I        &kp E               &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S            &kp N        &kp B
 &mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L  &hm RCTRL P  &kp V    &ht_win RIGHT_WIN 0
-                                           &lt 1 TAB           &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
+                                           &lt_tab 1 0         &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
             >;
         };
 
