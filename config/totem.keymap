@@ -74,21 +74,30 @@
 
         /* MOD-MORPH: Dot on tap, Colon on Shift+Dot */
 
-        dot_col: dot_colon {
+        shift_backspace: shift_backspace-space {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp COLON>;
+            bindings = <&kp BACKSPACE>, <&kp SPACE>;
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        td_playnext_previous: td_playnext_previous {
+        td_media_up: td_media_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp C_NEXT>, <&kp C_PREV>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_NEXT>;
 
-            label = "TD_PLAYNEXT_PREVIOUS";
+            label = "TD_MEDIA_UP";
+        };
+
+        td_media_down: td_media_down {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>;
+
+            label = "TD_MEDIA_DOWN";
         };
     };
 
@@ -359,10 +368,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-          &kp LC(Y)   &kp LC(C)  &kp UP_ARROW    &kp LA(LC(Z))  &kp LA(LS(Q))            &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8            &kp NUMBER_9  &kp PLUS
-          &kp LA(F4)  &kp LEFT   &kp DOWN        &kp RIGHT      &kp LC(F)                &kp KP_DIVIDE    &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6  &kp MINUS
-&kp HOME  &kp INS     &kp LC(X)  &kp LC(Z)       &kp LC(V)      &kp LS(INS)              &kp PERIOD       &kp NUMBER_1  &kp NUMBER_2            &kp NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
-                                 &kp C_PREVIOUS  &none          &td_playnext_previous    &kp EQUAL        &kp NUMBER_0  &kp LS(LA(LC(PERIOD)))
+          &kp LC(Y)   &kp LC(C)  &kp UP_ARROW    &kp LA(LC(Z))  &kp LA(LS(Q))    &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8            &kp NUMBER_9  &kp PLUS
+          &kp LA(F4)  &kp LEFT   &kp DOWN        &kp RIGHT      &kp LC(F)        &kp KP_DIVIDE    &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6  &kp MINUS
+&kp HOME  &kp INS     &kp LC(X)  &kp LC(Z)       &kp LC(V)      &kp LS(INS)      &kp PERIOD       &kp NUMBER_1  &kp NUMBER_2            &kp NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
+                                 &td_media_down  &none          &td_media_up     &kp EQUAL        &kp NUMBER_0  &kp LS(LA(LC(PERIOD)))
             >;
         };
 
