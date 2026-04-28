@@ -85,7 +85,7 @@
         td_media_up: td_media_up {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
             bindings = <&kp C_VOLUME_UP>, <&kp C_NEXT>;
 
             label = "TD_MEDIA_UP";
@@ -94,7 +94,7 @@
         td_media_down: td_media_down {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <300>;
             bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>;
 
             label = "TD_MEDIA_DOWN";
