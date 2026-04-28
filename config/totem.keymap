@@ -99,27 +99,22 @@
 
             label = "TD_MEDIA_DOWN";
 
-            /* 1. The Tap-Dance Engine for the Win Key */
+/* 1. The Tap-Dance (The Actions) */
+td_win: win_tap_dance {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>; 
+    bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 12>;
+};
 
-            td_win: win_tap_dance {
-                compatible = "zmk,behavior-tap-dance";
-                #binding-cells = <0>;
-                tapping-term-ms = <250>; /* Slightly longer so you have time for 3 taps */
-                /* 1 Tap = Win+E, 2 Taps = Ctrl+Shift+Alt+F9, 3 Taps = Toggle Layer 5 */
-
-                bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 5>;
-            };
-
-            /* 2. The Hold-Tap Wrapper (Hold = Win Mod, Tap = The Tap-Dance) */
-
-            ht_win: hold_tap_win {
-                compatible = "zmk,behavior-hold-tap";
-                #binding-cells = <2>;
-                flavor = "hold-preferred";
-                tapping-term-ms = <200>;
-                bindings = <&kp>, <&td_win>;
- /* Passes the Hold to a KeyPress, and the Tap to our Tap-Dance */
-            };
+/* 2. The Hold-Tap (The Logic) */
+ht_win: hold_tap_win {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&kp>, <&td_win>; 
+};
 
             /* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
 
@@ -568,7 +563,7 @@
             bindings = <
             &kp Q  &kp W  &kp E            &kp R        &kp T     &kp Y   &kp U       &kp I      &kp O       &kp P
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
-&kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &to 0
+&kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
                           &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
             >;
         };
