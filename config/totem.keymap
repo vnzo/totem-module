@@ -98,6 +98,42 @@
             bindings = <&kp C_VOLUME_DOWN>, <&kp C_PREVIOUS>;
 
             label = "TD_MEDIA_DOWN";
+
+/* 1. The Tap-Dance Engine for the Win Key */
+td_win: win_tap_dance {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <250>; /* Slightly longer so you have time for 3 taps */
+    /* 1 Tap = Win+E, 2 Taps = Ctrl+Shift+Alt+F9, 3 Taps = Toggle Layer 5 */
+    bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 5>;
+};
+
+/* 2. The Hold-Tap Wrapper (Hold = Win Mod, Tap = The Tap-Dance) */
+ht_win: hold_tap_win {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&kp>, <&td_win>; /* Passes the Hold to a KeyPress, and the Tap to our Tap-Dance */
+};
+
+/* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
+bs_spc: backspace_space {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&kp BSPC>, <&kp SPACE>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+/* 2. The Layer-Tap Wrapper (Hold = Layer, Tap = The Mod-Morph) */
+lt_bs_spc: layer_tap_bs_spc {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
+    bindings = <&mo>, <&bs_spc>; /* Hold switches layer, Tap triggers the Morph */
+};
+
         };
     };
 
