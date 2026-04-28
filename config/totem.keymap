@@ -141,6 +141,23 @@
 
                 quick-tap-ms = <200>;
             };
+/* 1. The Tap-Dance (Tuned for fast double-taps) */
+td_tab_media: tab_play_pause {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>; // Fast window for the double-tap
+    bindings = <&kp TAB>, <&kp C_PP>;
+};
+
+/* 2. The Hold-Tap (Tuned for slow navigation) */
+lt_tab: layer_hold_tab_dance {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "tap-preferred"; // Prioritizes the Tab/Dance over the Layer
+    tapping-term-ms = <250>;   // Must hold for 250ms to trigger Layer 1
+    quick-tap-ms = <200>;      // Allows slow-but-repeated Tabbing
+    bindings = <&mo>, <&td_tab_media>;
+};
         };
     };
 
