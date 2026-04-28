@@ -99,41 +99,49 @@
 
             label = "TD_MEDIA_DOWN";
 
-/* 1. The Tap-Dance Engine for the Win Key */
-td_win: win_tap_dance {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <250>; /* Slightly longer so you have time for 3 taps */
-    /* 1 Tap = Win+E, 2 Taps = Ctrl+Shift+Alt+F9, 3 Taps = Toggle Layer 5 */
-    bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 5>;
-};
+            /* 1. The Tap-Dance Engine for the Win Key */
 
-/* 2. The Hold-Tap Wrapper (Hold = Win Mod, Tap = The Tap-Dance) */
-ht_win: hold_tap_win {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <200>;
-    bindings = <&kp>, <&td_win>; /* Passes the Hold to a KeyPress, and the Tap to our Tap-Dance */
-};
+            td_win: win_tap_dance {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <250>; /* Slightly longer so you have time for 3 taps */
+                /* 1 Tap = Win+E, 2 Taps = Ctrl+Shift+Alt+F9, 3 Taps = Toggle Layer 5 */
 
-/* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
-bs_spc: backspace_space {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp BSPC>, <&kp SPACE>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-};
+                bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 5>;
+            };
 
-/* 2. The Layer-Tap Wrapper (Hold = Layer, Tap = The Mod-Morph) */
-lt_bs_spc: layer_tap_bs_spc {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <200>;
-    bindings = <&mo>, <&bs_spc>; /* Hold switches layer, Tap triggers the Morph */
-};
+            /* 2. The Hold-Tap Wrapper (Hold = Win Mod, Tap = The Tap-Dance) */
 
+            ht_win: hold_tap_win {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "hold-preferred";
+                tapping-term-ms = <200>;
+                bindings = <&kp>, <&td_win>;
+ /* Passes the Hold to a KeyPress, and the Tap to our Tap-Dance */
+            };
+
+            /* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
+
+            bs_spc: backspace_space {
+                compatible = "zmk,behavior-mod-morph";
+                #binding-cells = <0>;
+                bindings = <&kp BSPC>, <&kp SPACE>;
+
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+
+            /* 2. The Layer-Tap Wrapper (Hold = Layer, Tap = The Mod-Morph) */
+
+            lt_bs_spc: layer_tap_bs_spc {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "tap-preferred";
+                tapping-term-ms = <200>;
+                bindings = <&mo>, <&bs_spc>;
+ /* Hold switches layer, Tap triggers the Morph */
+                quick-tap-ms = <200>;
+            };
         };
     };
 
@@ -370,10 +378,10 @@ lt_bs_spc: layer_tap_bs_spc {
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U   &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
-                     &kp Y    &kp I        &kp E               &hm LSHFT A      &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S            &kp N        &kp B
-&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K            &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L  &hm RCTRL P  &kp V    &mt RIGHT_WIN C_AL_MY_COMPUTER
-                                           &lt 1 TAB           &lt 2 BACKSPACE  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
+                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R            &kp F        &lt 8 Z
+                     &kp Y    &kp I        &kp E               &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S            &kp N        &kp B
+&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L  &hm RCTRL P  &kp V    &ht_win RIGHT_WIN 0
+                                           &lt 1 TAB           &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &lt 6 LS(TAB)
             >;
         };
 
