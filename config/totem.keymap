@@ -168,18 +168,18 @@
                 flavor = "tap-preferred";
                 tapping-term-ms = <250>;
                 quick-tap-ms = <200>;
-                bindings = <&mo>, <&tdance_stab_media>;
+                bindings = <&mo>, <&tdance_stab_sleep>;
 
                 label = "RTHUMB_HOLD_TAP_DANCE";
             };
 
-            tdance_stab_media: tdance_stab_media {
+            tdance_stab_sleep: tdance_stab_sleep {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp LS(TAB)>, <&kp C_RANDOM_PLAY>;
+                bindings = <&kp LS(TAB)>, <&kp C_SLEEP>;
 
-                label = "TDANCE_STAB_MEDIA";
+                label = "TDANCE_STAB_SLEEP";
             };
         };
     };
