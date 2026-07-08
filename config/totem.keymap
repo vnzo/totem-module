@@ -101,7 +101,7 @@
 
             /* 1. The Tap-Dance (The Actions) */
 
-            td_win: win_tap_dance {
+            td_rwin_f9_layer12: win_tap_dance {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
@@ -115,7 +115,7 @@
                 #binding-cells = <2>;
                 flavor = "tap-preferred";
                 tapping-term-ms = <200>;
-                bindings = <&kp>, <&td_win>;
+                bindings = <&kp>, <&td_rwin_f9_layer12>;
             };
 
             /* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
@@ -177,7 +177,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp LS(TAB)>, <&kp C_SLEEP>;
+                bindings = <&kp LS(TAB)>, <&kp C_AL_TEXT_EDITOR>, <&tog 13>;
 
                 label = "TDANCE_STAB_SLEEP";
             };
@@ -596,7 +596,7 @@
 
         L11-mouse {
             bindings = <
-        &trans  &trans  &trans       &trans        &trans                &trans          &tog 11          &mmv MOVE_UP    &kp SPACE        &kp BACKSPACE
+        &trans  &trans  &trans       &trans        &trans                &tog 12         &tog 11          &mmv MOVE_UP    &kp SPACE        &kp BACKSPACE
         &trans  &trans  &td_tab      &bs_del       &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
 &trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5       &trans
                         &bootloader  &kp C_REWIND  &kp C_FAST_FORWARD    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
@@ -609,6 +609,15 @@
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
 &kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
                           &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
+            >;
+        };
+
+        L13-key-test {
+            bindings = <
+            &kp K_WWW   &kp C_AC_NEW      &kp C_AC_CUT      &kp C_AC_BACK  &kp C_BRI_INC    &kp K_CALCULATOR  &kp C_RW    &kp C_FAST_FORWARD  &kp C_POWER            &kp K_REDO
+            &kp K_COPY  &kp C_AC_OPEN     &kp C_AC_EXIT     &kp C_AC_COPY  &kp C_BRI_DEC    &kp K_PREVIOUS    &kp C_PWR   &kp C_PREV          &kp C_NEXT             &kp K_BACK
+&kp K_MUTE  &kp K_EDIT  &kp C_AC_FORWARD  &kp K_PLAY_PAUSE  &kp K_CMENU    &kp K_PWR        &kp K_CALC        &kp C_MENU  &kp C_EJECT         &kp C_AL_FILE_BROWSER  &kp K_MENU  &kp K_VOL_DN
+                                          &kp K_POWER       &kp K_CUT      &kp K_APP        &kp K_FIND        &kp K_UNDO  &trans
             >;
         };
     };
