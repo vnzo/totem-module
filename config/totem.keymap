@@ -153,7 +153,7 @@
 
             /* 2. The Hold-Tap (Tuned for slow navigation) */
 
-            lthumb_hold_tab_dance: layer_hold_tab_dance {
+            lthumb_hold_dance: layer_hold_tab_dance {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred"; // Prioritizes the Tab/Dance over the Layer
@@ -162,24 +162,24 @@
                 bindings = <&mo>, <&tdance_tab_mediapp>;
             };
 
-            rthumb_hold_tap_dance: rthumb_hold_tap_dance {
+            rthumb_hold_dance: rthumb_hold_dance {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred";
                 tapping-term-ms = <250>;
                 quick-tap-ms = <200>;
-                bindings = <&mo>, <&tdance_stab_sleep>;
+                bindings = <&mo>, <&tdance_end_home_mouse>;
 
-                label = "RTHUMB_HOLD_TAP_DANCE";
+                label = "RTHUMB_HOLD_DANCE";
             };
 
-            tdance_stab_sleep: tdance_stab_sleep {
+            tdance_end_home_mouse: tdance_end_home_mouse {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp LS(TAB)>, <&kp C_AL_TEXT_EDITOR>, <&tog 13>;
+                bindings = <&kp END>, <&kp HOME>, <&tog 11>;
 
-                label = "TDANCE_STAB_SLEEP";
+                label = "TDANCE_END_HOME_MOUSE";
             };
         };
     };
@@ -417,10 +417,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                     &lt 7 Q  &kp H        &kp O                       &hm LEFT_WIN U  &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R                       &kp F        &lt 8 Z
-                     &kp Y    &kp I        &kp E                       &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                       &kp N        &kp B
-&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA          &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L             &hm RCTRL P  &kp V    &ht_win RIGHT_WIN 0
-                                           &lthumb_hold_tab_dance 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &rthumb_hold_tap_dance 6 0
+                     &lt 7 Q  &kp H        &kp O                   &hm LEFT_WIN U  &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R                   &kp F        &lt 8 Z
+                     &kp Y    &kp I        &kp E                   &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                   &kp N        &kp B
+&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA      &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L         &hm RCTRL P  &kp V    &ht_win RIGHT_WIN 0
+                                           &lthumb_hold_dance 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &rthumb_hold_dance 6 0
             >;
         };
 
@@ -506,7 +506,7 @@
             >;
         };
 
-        L5-hifn {
+        L5-fn24 {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
             label = "L5-fn";
@@ -540,7 +540,7 @@
             >;
         };
 
-        L7-pinky {
+        L7-as {
             label = "L7-as";
             bindings = <
                       &trans         &kp LS(LA(H))  &kp LS(LA(O))         &kp LS(LA(U))         &kp LS(LA(QUESTION))    &kp LS(LA(G))   &kp LS(LA(C))         &kp LS(LA(R))   &kp LS(LA(F))  &kp LS(LA(Z))
@@ -550,7 +550,7 @@
             >;
         };
 
-        L8-pinky {
+        L8-ac {
             label = "L8-ac";
             bindings = <
                       &kp LC(LA(Q))  &kp LC(LA(H))  &kp LC(LA(O))         &kp LC(LA(U))         &kp LC(LA(QUESTION))    &kp LC(LA(G))         &kp LC(LA(C))         &kp LC(LA(R))         &kp LC(LA(A))  &trans
@@ -560,7 +560,7 @@
             >;
         };
 
-        L9-edit+ {
+        L9-meta {
             label = "L9-edit+";
             bindings = <
                         &kp LC(LS(LA(LG(Q))))  &kp LC(LS(LA(LG(H))))  &kp LC(LS(LA(LG(O))))      &kp LC(LS(LA(LG(U))))   &kp LC(LS(LA(LG(QUESTION))))    &kp LC(LS(LA(LG(G))))   &kp LC(LS(LA(LG(C))))    &kp LC(LS(LA(LG(R))))    &kp LC(LS(LA(LG(F))))  &kp LC(LS(LA(LG(Z))))
@@ -596,10 +596,10 @@
 
         L11-mouse {
             bindings = <
-        &trans  &trans  &trans       &trans        &trans                &tog 12         &tog 11          &mmv MOVE_UP    &kp SPACE        &kp BACKSPACE
-        &trans  &trans  &td_tab      &bs_del       &trans                &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
-&trans  &trans  &trans  &trans       &trans        &trans                &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5       &trans
-                        &bootloader  &kp C_REWIND  &kp C_FAST_FORWARD    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
+       &kp C_MEDIA_COMPUTER  &kp C_NEXT     &kp C_PREVIOUS    &kp K_APPLICATION  &trans    &trans          &tog 11          &mmv MOVE_UP    &kp SPACE        &kp BACKSPACE
+       &trans                &kp C_AC_BACK  &kp C_AC_FORWARD  &trans             &trans    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
+&to 0  &trans                &kp C_REWIND   &kp C_FF          &trans             &trans    &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5       &trans
+                                            &bootloader       &trans             &trans    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
             >;
         };
 
@@ -609,15 +609,6 @@
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
 &kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
                           &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
-            >;
-        };
-
-        L13-key-test {
-            bindings = <
-            &kp K_WWW   &kp C_AC_NEW      &kp C_AC_CUT      &kp C_AC_BACK  &kp C_BRI_INC    &kp K_CALCULATOR  &kp C_RW    &kp C_FAST_FORWARD  &kp C_POWER            &kp K_REDO
-            &kp K_COPY  &kp C_AC_OPEN     &kp C_AC_EXIT     &kp C_AC_COPY  &kp C_BRI_DEC    &kp K_PREVIOUS    &kp C_PWR   &kp C_PREV          &kp C_NEXT             &kp K_BACK
-&kp K_MUTE  &kp K_EDIT  &kp C_AC_FORWARD  &kp K_PLAY_PAUSE  &kp K_CMENU    &kp K_PWR        &kp K_CALC        &kp C_MENU  &kp C_EJECT         &kp C_AL_FILE_BROWSER  &kp K_MENU  &kp K_VOL_DN
-                                          &kp K_POWER       &kp K_CUT      &kp K_APP        &kp K_FIND        &kp K_UNDO  &trans
             >;
         };
     };
