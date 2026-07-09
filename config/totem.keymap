@@ -93,7 +93,7 @@
 
             /* 1. The Tap-Dance (The Actions) */
 
-            td_explorer_hotkeyf12_layer12: td_explorer_hotkeyf12_layer12 {
+            td_explorer_pp_layer12: td_explorer_pp_layer12 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
@@ -102,12 +102,12 @@
 
             /* 2. The Hold-Tap (The Logic) */
 
-            rwin_explorer_hotkey_layer12: rwin_explorer_hotkey_layer12 {
+            rwin_explorer_pp_layer12: rwin_explorer_pp_layer12 {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred";
                 tapping-term-ms = <200>;
-                bindings = <&kp>, <&td_explorer_hotkeyf12_layer12>;
+                bindings = <&kp>, <&td_explorer_pp_layer12>;
             };
 
             /* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
@@ -136,7 +136,7 @@
 
             /* 1. The Tap-Dance (Tuned for fast double-taps) */
 
-            td_tab_mediapp: td_tab_mediapp {
+            td_tab_back: td_tab_back {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>; // Fast window for the double-tap
@@ -145,16 +145,16 @@
 
             /* 2. The Hold-Tap (Tuned for slow navigation) */
 
-            lalt_tab_mediapp: lalt_tab_mediapp {
+            lalt_tab_back: lalt_tab_back {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred"; // Prioritizes the Tab/Dance over the Layer
                 tapping-term-ms = <250>;   // Must hold for 250ms to trigger Layer 1
                 quick-tap-ms = <200>;      // Allows slow-but-repeated Tabbing
-                bindings = <&mo>, <&td_tab_mediapp>;
+                bindings = <&mo>, <&td_tab_back>;
             };
 
-            ralt_del_home_end_mouse: ralt_del_home_end_mouse {
+            ralt_del_home_forward_mouse: ralt_del_home_forward_mouse {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred";
@@ -162,14 +162,14 @@
                 quick-tap-ms = <200>;
                 bindings = <&mo>, <&td_home_end_mouse>;
 
-                label = "RALT_DEL_HOME_END_MOUSE";
+                label = "RALT_DEL_HOME_FORWARD_MOUSE";
             };
 
             td_home_end_mouse: td_home_end_mouse {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp HOME>, <&kp END>, <&tog 11>;
+                bindings = <&kp HOME>, <&kp C_AC_FORWARD>, <&tog 11>;
 
                 label = "TD_HOME_END_MOUSE";
             };
@@ -418,10 +418,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                     &lt 7 Q  &kp H        &kp O                  &hm LEFT_WIN U  &lt 10 QUESTION    &lt 13 G     &hm RIGHT_WIN C  &kp R                         &kp F        &lt 8 Z
-                     &kp Y    &kp I        &kp E                  &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                         &kp N        &kp B
-&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA     &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L               &hm RCTRL P  &kp V    &rwin_explorer_hotkey_layer12 RIGHT_WIN 0
-                                           &lalt_tab_mediapp 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_end_mouse 6 0
+                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 10 QUESTION    &lt 13 G     &hm RIGHT_WIN C  &kp R                             &kp F        &lt 8 Z
+                     &kp Y    &kp I        &kp E               &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                             &kp N        &kp B
+&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L                   &hm RCTRL P  &kp V    &rwin_explorer_pp_layer12 RIGHT_WIN 0
+                                           &lalt_tab_back 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_forward_mouse 6 0
             >;
         };
 
@@ -597,10 +597,10 @@
 
         L11-mouse {
             bindings = <
-            &kp C_MEDIA_COMPUTER  &kp C_NEXT    &kp UP_ARROW  &kp C_PREV          &trans              &trans          &trans               &mmv MOVE_UP     &kp K_APPLICATION  &kp BACKSPACE
-            &kp RG(C_AC_BACK)     &kp LEFT      &kp DOWN      &kp RIGHT           &trans              &msc SCRL_UP    &mmv MOVE_LEFT       &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB4
-&kp ESCAPE  &trans                &kp C_REWIND  &trans        &kp C_FAST_FORWARD  &kp C_AC_FORWARD    &msc SCRL_DOWN  &mkp LCLK            &mkp MCLK        &mkp RCLK          &mkp MB5       &trans
-                                                &trans        &trans              &trans              &msc SCRL_LEFT  &kp C_AC_PROPERTIES  &back_to_layer0
+            &trans  &kp C_NEXT    &kp UP_ARROW    &kp C_PREV          &trans                 &trans          &trans             &mmv MOVE_UP     &kp K_APPLICATION  &kp BACKSPACE
+            &trans  &kp LEFT      &kp DOWN        &kp RIGHT           &kp C_AC_PROPERTIES    &msc SCRL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB4
+&kp ESCAPE  &trans  &kp C_REWIND  &kp C_AC_PROPS  &kp C_FAST_FORWARD  &trans                 &msc SCRL_DOWN  &mkp LCLK          &mkp MCLK        &mkp RCLK          &mkp MB5       &trans
+                                  &trans          &trans              &trans                 &msc SCRL_LEFT  &kp K_APPLICATION  &back_to_layer0
             >;
         };
 
