@@ -41,14 +41,6 @@
         };
 
         /* TAP-DANCE: 1 tap = Tab, 2 taps = Caps Lock */
-
-        td_tab: tap_dance_tab {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp TAB>, <&kp CAPS>;
-        };
-
         /* MOD-MORPH: Backspace that becomes Delete when Shift is held */
         /* This solves your Shift+Tab worry—you can keep Shift+Tab functional! */
 
@@ -101,21 +93,21 @@
 
             /* 1. The Tap-Dance (The Actions) */
 
-            td_rwin_f9_layer12: win_tap_dance {
+            td_explorer_hotkeyf12_layer12: td_explorer_hotkeyf12_layer12 {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
-                bindings = <&kp LG(E)>, <&kp LC(LS(LA(F9)))>, <&tog 12>;
+                bindings = <&kp LG(E)>, <&kp LC(LS(LA(F12)))>, <&tog 12>;
             };
 
             /* 2. The Hold-Tap (The Logic) */
 
-            ht_win: hold_tap_win {
+            rwin_explorer_hotkey_layer12: rwin_explorer_hotkey_layer12 {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred";
                 tapping-term-ms = <200>;
-                bindings = <&kp>, <&td_rwin_f9_layer12>;
+                bindings = <&kp>, <&td_explorer_hotkeyf12_layer12>;
             };
 
             /* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
@@ -144,7 +136,7 @@
 
             /* 1. The Tap-Dance (Tuned for fast double-taps) */
 
-            tdance_tab_mediapp: tab_play_pause {
+            td_tab_mediapp: td_tab_mediapp {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>; // Fast window for the double-tap
@@ -153,33 +145,33 @@
 
             /* 2. The Hold-Tap (Tuned for slow navigation) */
 
-            lthumb_hold_dance: layer_hold_tab_dance {
+            lalt_tab_mediapp: lalt_tab_mediapp {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred"; // Prioritizes the Tab/Dance over the Layer
                 tapping-term-ms = <250>;   // Must hold for 250ms to trigger Layer 1
                 quick-tap-ms = <200>;      // Allows slow-but-repeated Tabbing
-                bindings = <&mo>, <&tdance_tab_mediapp>;
+                bindings = <&mo>, <&td_tab_mediapp>;
             };
 
-            rthumb_hold_dance: rthumb_hold_dance {
+            ralt_del_home_end_mouse: ralt_del_home_end_mouse {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred";
                 tapping-term-ms = <250>;
                 quick-tap-ms = <200>;
-                bindings = <&mo>, <&tdance_end_home_mouse>;
+                bindings = <&mo>, <&td_home_end_mouse>;
 
-                label = "RTHUMB_HOLD_DANCE";
+                label = "RALT_DEL_HOME_END_MOUSE";
             };
 
-            tdance_end_home_mouse: tdance_end_home_mouse {
+            td_home_end_mouse: td_home_end_mouse {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp END>, <&kp HOME>, <&tog 11>;
+                bindings = <&kp HOME>, <&kp HOME>, <&tog 11>;
 
-                label = "TDANCE_END_HOME_MOUSE";
+                label = "TD_HOME_END_MOUSE";
             };
         };
     };
@@ -417,10 +409,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                     &lt 7 Q  &kp H        &kp O                   &hm LEFT_WIN U  &lt 10 QUESTION    &lt 11 G     &hm RIGHT_WIN C  &kp R                   &kp F        &lt 8 Z
-                     &kp Y    &kp I        &kp E                   &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                   &kp N        &kp B
-&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA      &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L         &hm RCTRL P  &kp V    &ht_win RIGHT_WIN 0
-                                           &lthumb_hold_dance 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &rthumb_hold_dance 6 0
+                     &lt 7 Q  &kp H        &kp O                  &hm LEFT_WIN U  &lt 10 QUESTION    &lt 13 G     &hm RIGHT_WIN C  &kp R                         &kp F        &lt 8 Z
+                     &kp Y    &kp I        &kp E                  &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                         &kp N        &kp B
+&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA     &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L               &hm RCTRL P  &kp V    &rwin_explorer_hotkey_layer12 RIGHT_WIN 0
+                                           &lalt_tab_mediapp 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_end_mouse 6 0
             >;
         };
 
@@ -596,10 +588,10 @@
 
         L11-mouse {
             bindings = <
-       &kp C_MEDIA_COMPUTER  &kp C_NEXT     &kp C_PREVIOUS    &kp K_APPLICATION  &trans    &trans          &tog 11          &mmv MOVE_UP    &kp SPACE        &kp BACKSPACE
-       &trans                &kp C_AC_BACK  &kp C_AC_FORWARD  &trans             &trans    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB4
-&to 0  &trans                &kp C_REWIND   &kp C_FF          &trans             &trans    &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK        &mkp MB5       &trans
-                                            &bootloader       &trans             &trans    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
+       &kp C_MEDIA_COMPUTER  &kp C_NEXT    &kp UP_ARROW  &kp C_PREV          &trans              &trans          &kp C_AC_DEL         &mmv MOVE_UP     &kp K_APPLICATION  &kp BACKSPACE
+       &kp RG(C_AC_BACK)     &kp LEFT      &kp DOWN      &kp RIGHT           &trans              &msc SCRL_UP    &mmv MOVE_LEFT       &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB4
+&to 0  &trans                &kp C_REWIND  &trans        &kp C_FAST_FORWARD  &kp C_AC_FORWARD    &msc SCRL_DOWN  &mkp LCLK            &mkp MCLK        &mkp RCLK          &mkp MB5       &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
+                                           &bootloader   &trans              &trans              &msc SCRL_LEFT  &kp C_AC_PROPERTIES  &msc SCRL_RIGHT
             >;
         };
 
@@ -609,6 +601,15 @@
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
 &kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
                           &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
+            >;
+        };
+
+        layer_13 {
+            bindings = <
+        &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
+        &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans  &trans
+                        &bootloader  &trans  &trans    &trans  &trans  &bootloader
             >;
         };
     };
