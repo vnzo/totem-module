@@ -97,7 +97,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
-                bindings = <&kp LG(E)>, <&kp LC(LS(LA(F12)))>, <&tog 12>;
+                bindings = <&kp LG(E)>, <&kp C_PLAY_PAUSE>, <&tog 12>;
             };
 
             /* 2. The Hold-Tap (The Logic) */
@@ -140,7 +140,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>; // Fast window for the double-tap
-                bindings = <&kp TAB>, <&kp C_PP>;
+                bindings = <&kp TAB>, <&kp C_AC_BACK>;
             };
 
             /* 2. The Hold-Tap (Tuned for slow navigation) */
@@ -169,9 +169,18 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp HOME>, <&kp HOME>, <&tog 11>;
+                bindings = <&kp HOME>, <&kp END>, <&tog 11>;
 
                 label = "TD_HOME_END_MOUSE";
+            };
+
+            back_to_layer0: back_to_layer0 {
+                compatible = "zmk,behavior-tap-dance";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&msc SCRL_RIGHT>, <&msc SCRL_RIGHT>, <&tog 11>;
+
+                label = "BACK_TO_LAYER0";
             };
         };
     };
@@ -588,10 +597,10 @@
 
         L11-mouse {
             bindings = <
-       &kp C_MEDIA_COMPUTER  &kp C_NEXT    &kp UP_ARROW  &kp C_PREV          &trans              &trans          &kp C_AC_DEL         &mmv MOVE_UP     &kp K_APPLICATION  &kp BACKSPACE
-       &kp RG(C_AC_BACK)     &kp LEFT      &kp DOWN      &kp RIGHT           &trans              &msc SCRL_UP    &mmv MOVE_LEFT       &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB4
-&to 0  &trans                &kp C_REWIND  &trans        &kp C_FAST_FORWARD  &kp C_AC_FORWARD    &msc SCRL_DOWN  &mkp LCLK            &mkp MCLK        &mkp RCLK          &mkp MB5       &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS
-                                           &bootloader   &trans              &trans              &msc SCRL_LEFT  &kp C_AC_PROPERTIES  &msc SCRL_RIGHT
+            &kp C_MEDIA_COMPUTER  &kp C_NEXT    &kp UP_ARROW  &kp C_PREV          &trans              &trans          &trans               &mmv MOVE_UP     &kp K_APPLICATION  &kp BACKSPACE
+            &kp RG(C_AC_BACK)     &kp LEFT      &kp DOWN      &kp RIGHT           &trans              &msc SCRL_UP    &mmv MOVE_LEFT       &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB4
+&kp ESCAPE  &trans                &kp C_REWIND  &trans        &kp C_FAST_FORWARD  &kp C_AC_FORWARD    &msc SCRL_DOWN  &mkp LCLK            &mkp MCLK        &mkp RCLK          &mkp MB5       &trans
+                                                &trans        &trans              &trans              &msc SCRL_LEFT  &kp C_AC_PROPERTIES  &back_to_layer0
             >;
         };
 
