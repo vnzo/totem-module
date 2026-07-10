@@ -452,10 +452,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-          &kp LC(Y)   &kp LC(C)  &kp UP_ARROW       &kp LA(LC(Z))  &kp LA(LS(Q))       &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8            &kp NUMBER_9  &kp PLUS
-          &kp LA(F4)  &kp LEFT   &kp DOWN           &kp RIGHT      &kp LC(F)           &kp KP_DIVIDE    &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6  &kp MINUS
-&kp HOME  &kp INS     &kp LC(X)  &kp LC(Z)          &kp LC(V)      &kp LS(INS)         &kp PERIOD       &kp NUMBER_1  &kp NUMBER_2            &kp NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
-                                 &td_backward_prev  &none          &td_forward_next    &kp EQUAL        &kp NUMBER_0  &kp LS(LA(LC(PERIOD)))
+          &kp LC(NUMBER_6)  &kp LC(C)  &kp UP_ARROW       &kp LA(LC(Z))  &kp LA(LS(Q))       &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8            &kp NUMBER_9  &kp PLUS
+          &kp LA(F4)        &kp LEFT   &kp DOWN           &kp RIGHT      &kp LC(F)           &kp KP_DIVIDE    &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6  &kp MINUS
+&kp HOME  &kp INS           &kp LC(X)  &kp LC(Z)          &kp LC(V)      &kp LS(INS)         &kp PERIOD       &kp NUMBER_1  &kp NUMBER_2            &kp NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
+                                       &td_backward_prev  &none          &td_forward_next    &kp EQUAL        &kp NUMBER_0  &kp LS(LA(LC(PERIOD)))
             >;
         };
 
@@ -476,10 +476,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp LG(V)      &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)          &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN     &kp F7               &kp F8           &kp F9  &kp F12
-                    &kp LC(W)      &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))  &kp PG_UP                  &kp HOME            &kp F4               &kp F5           &kp F6  &kp F11
-&kp LC(LS(ESCAPE))  &kp LC(LS(T))  &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)     &kp PAGE_DOWN              &kp END             &kp F1               &kp F2           &kp F3  &kp F10  &kp LS(LA(LC(F12)))
-                                                           &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none                      &kp LS(LA(LC(F9)))  &kp LS(LA(LC(F10)))  &kp LS(LA(F11))
+                    &kp LC(NUMBER_6)  &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)          &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN     &kp F7               &kp F8           &kp F9  &kp F12
+                    &kp LC(W)         &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))  &kp PG_UP                  &kp HOME            &kp F4               &kp F5           &kp F6  &kp F11
+&kp LC(LS(ESCAPE))  &kp LC(LS(T))     &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)     &kp PAGE_DOWN              &kp END             &kp F1               &kp F2           &kp F3  &kp F10  &kp LS(LA(LC(F12)))
+                                                              &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none                      &kp LS(LA(LC(F9)))  &kp LS(LA(LC(F10)))  &kp LS(LA(F11))
             >;
         };
 
