@@ -262,9 +262,9 @@
             layers = <0>;
         };
 
-        l-shift-dn {
+        home3 {
             timeout-ms = <120>;
-            bindings = <&kp LEFT_SHIFT>;
+            bindings = <&kp HOME>;
             key-positions = <21 11>;
         };
 
@@ -418,7 +418,7 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 10 QUESTION    &lt 0 G      &hm RIGHT_WIN C  &kp R                             &kp F        &lt 8 Z
+                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 10 QUESTION    &lt 13 G     &hm RIGHT_WIN C  &kp R                             &kp F        &lt 8 Z
                      &kp Y    &kp I        &kp E               &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                             &kp N        &kp B
 &mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L                   &hm RCTRL P  &kp V    &rwin_explorer_pp_layer12 RIGHT_WIN 0
                                            &lalt_tab_back 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_forward_mouse 6 0
@@ -610,6 +610,15 @@
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
 &kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
                           &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
+            >;
+        };
+
+        layer_13 {
+            bindings = <
+        &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
+        &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans  &trans
+                        &bootloader  &trans  &trans    &trans  &trans  &bootloader
             >;
         };
     };
