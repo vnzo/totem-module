@@ -169,7 +169,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&kp HOME>, <&kp C_AC_FORWARD>, <&tog 11>;
+                bindings = <&kp HOME>, <&kp C_AC_FORWARD>;
 
                 label = "TD_HOME_END_MOUSE";
             };
@@ -615,7 +615,7 @@
 
         layer_13 {
             bindings = <
-        &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
+        &trans  &trans  &trans       &trans  &trans    &trans  &to 11  &trans       &trans  &trans
         &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
 &trans  &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans  &trans
                         &bootloader  &trans  &trans    &trans  &trans  &bootloader
