@@ -201,28 +201,16 @@
                 <&kp G &kp I &kp F>;
         };
 
-        my_period_macro: my_period_macro {
+        email: my_period_macro {
             compatible = "zmk,behavior-macro";
             label = "MY_PERIOD_MACRO";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp RET &sk LSHFT>;
+            bindings = <&kp V &kp N &kp Z &kp AT &kp L &kp I &kp V &kp E &kp DOT &kp C &kp O &kp M>;
         };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        tab {
-            timeout-ms = <100>;
-            key-positions = <0 1>;
-            bindings = <&kp TAB>;
-        };
-
-        qmark {
-            timeout-ms = <100>;
-            key-positions = <3 14>;
-            bindings = <&kp QUESTION>;
-        };
 
         esc {
             timeout-ms = <50>;
@@ -237,16 +225,10 @@
             bindings = <&kp DEL>;
         };
 
-        tab2 {
+        tab {
             timeout-ms = <40>;
             key-positions = <1 2>;
             bindings = <&kp TAB>;
-        };
-
-        my-pc {
-            timeout-ms = <100>;
-            bindings = <&kp C_AL_MY_COMPUTER>;
-            key-positions = <19 31>;
         };
 
         todo2 {
@@ -255,20 +237,13 @@
             key-positions = <7 8>;
         };
 
-        todo3 {
-            timeout-ms = <100>;
-            bindings = <&kp END>;
-            key-positions = <8 9>;
-            layers = <0>;
-        };
-
         home {
             timeout-ms = <120>;
             bindings = <&kp HOME>;
             key-positions = <21 11>;
         };
 
-        l-ctrl-dn {
+        todo3 {
             timeout-ms = <120>;
             bindings = <&kp LCTRL>;
             key-positions = <12 22>;
@@ -276,11 +251,11 @@
 
         end {
             timeout-ms = <120>;
-            bindings = <&kp RIGHT_SHIFT>;
+            bindings = <&kp END>;
             key-positions = <18 30>;
         };
 
-        r-ctrl-dn {
+        todo4 {
             timeout-ms = <120>;
             bindings = <&kp RCTRL>;
             key-positions = <17 29>;
@@ -298,45 +273,15 @@
             timeout-ms = <100>;
         };
 
-        l-shift {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <10 20>;
-            timeout-ms = <100>;
-        };
-
-        space2 {
+        todo6 {
             bindings = <&kp GREATER_THAN>;
             key-positions = <14 25>;
-            timeout-ms = <100>;
-        };
-
-        mouse-left {
-            bindings = <&mkp LCLK>;
-            key-positions = <27 16>;
-            timeout-ms = <100>;
-        };
-
-        mouse-right {
-            bindings = <&mkp RCLK>;
-            key-positions = <6 16>;
             timeout-ms = <100>;
         };
 
         space3 {
             bindings = <&kp SPACE>;
             key-positions = <13 24>;
-            timeout-ms = <100>;
-        };
-
-        todo4 {
-            bindings = <&kp HOME>;
-            key-positions = <1 11>;
-            timeout-ms = <100>;
-        };
-
-        todo1 {
-            bindings = <&kp END>;
-            key-positions = <11 22>;
             timeout-ms = <100>;
         };
 
@@ -352,47 +297,14 @@
             timeout-ms = <100>;
         };
 
-        less {
-            bindings = <&kp LESS_THAN>;
-            key-positions = <12 23>;
-            timeout-ms = <100>;
-        };
-
-        greater {
-            bindings = <&kp GREATER_THAN>;
-            key-positions = <17 28>;
-            timeout-ms = <100>;
-        };
-
         shift-input {
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <27 28>;
         };
 
-        mouse-scroll-up {
-            bindings = <&msc SCRL_UP>;
-            key-positions = <6 16>;
-        };
-
-        mouse-scroll-dn {
-            bindings = <&mmv MOVE_DOWN>;
-            key-positions = <16 27>;
-        };
-
-        tol0 {
-            bindings = <&tog 12>;
-            key-positions = <33 3>;
-        };
-
-        new-para {
-            bindings = <&my_period_macro>;
+        todo7 {
+            bindings = <&email>;
             key-positions = <21 22>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
-            layers = <11>;
         };
     };
 
@@ -608,7 +520,7 @@
             bindings = <
             &kp Q  &kp W  &kp E            &kp R        &kp T     &kp Y   &kp U       &kp I      &kp O       &kp P
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
-&kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &to 0
+&kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
                           &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
             >;
         };
