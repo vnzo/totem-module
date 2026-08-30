@@ -249,20 +249,20 @@
             key-positions = <19 31>;
         };
 
-        home2 {
+        todo2 {
             timeout-ms = <100>;
             bindings = <&kp END>;
             key-positions = <7 8>;
         };
 
-        end2 {
+        todo3 {
             timeout-ms = <100>;
             bindings = <&kp END>;
             key-positions = <8 9>;
             layers = <0>;
         };
 
-        home3 {
+        home {
             timeout-ms = <120>;
             bindings = <&kp HOME>;
             key-positions = <21 11>;
@@ -274,7 +274,7 @@
             key-positions = <12 22>;
         };
 
-        r-shift-dn {
+        end {
             timeout-ms = <120>;
             bindings = <&kp RIGHT_SHIFT>;
             key-positions = <18 30>;
@@ -328,13 +328,13 @@
             timeout-ms = <100>;
         };
 
-        home {
+        todo4 {
             bindings = <&kp HOME>;
             key-positions = <1 11>;
             timeout-ms = <100>;
         };
 
-        end {
+        todo1 {
             bindings = <&kp END>;
             key-positions = <11 22>;
             timeout-ms = <100>;
