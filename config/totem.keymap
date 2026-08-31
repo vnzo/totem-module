@@ -438,7 +438,7 @@
             bindings = <
                     &kp LS(LA(LC(F15)))  &kp F22  &kp LS(LA(LC(F16)))  &kp F24              &kp LA(LC(F17))       &kp LA(LC(F19))         &kp LA(LC(F20))   &kp LA(LG(UP_ARROW))    &kp LS(F10)             &kt LEFT_ALT
                     &kp F17              &kp F18  &kp F19              &kp F20              &kp LA(LC(F18))       &kp LS(LA(LC(LG(F2))))  &kp LA(LG(LEFT))  &kp LA(LG(DOWN))        &kp LA(LG(RIGHT))       &kp LS(LA(LC(F14)))
-&kp LA(LC(LS(F5)))  &kp F13              &kp F14  &kp F15              &kp LS(LA(LC(F13)))  &kp CAPS              &kp LS(LA(LC(LG(F1))))  &mkp LCLK         &kp LS(LA(LC(LG(F3))))  &kp LS(LA(LC(LG(F4))))  &kp LS(LA(F11))      &kp LA(LC(F12))
+&kp LA(LC(LS(F5)))  &kp F13              &kp F14  &kp F15              &kp LS(LA(LC(F13)))  &kp CAPS              &kp LS(LA(LC(LG(F1))))  &mkp LCLK         &kp LS(LA(LC(LG(F3))))  &kp LS(LA(LC(LG(F4))))  &kp LS(LA(LC(F11)))  &kp LA(LC(LS(F12)))
                                                   &kp LA(LC(LS(F6)))   &kp LA(LC(LS(F7)))   &kp LA(LC(LS(F8)))    &kp LA(LC(LS(F9)))      &none             &kp LA(LC(LS(F10)))
             >;
         };
