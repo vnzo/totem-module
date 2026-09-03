@@ -97,7 +97,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
-                bindings = <&kp LG(E)>, <&kp C_PLAY_PAUSE>, <&tog 12>;
+                bindings = <&kp LG(E)>, <&kp C_PLAY_PAUSE>, <&tog 10>;
             };
 
             /* 2. The Hold-Tap (The Logic) */
@@ -178,7 +178,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&msc SCRL_RIGHT>, <&msc SCRL_RIGHT>, <&tog 11>;
+                bindings = <&msc SCRL_RIGHT>, <&msc SCRL_RIGHT>, <&tog 9>;
 
                 label = "BACK_TO_LAYER0";
             };
@@ -330,20 +330,20 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                     &lt 7 Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 10 QUESTION    &lt 13 G     &hm RIGHT_WIN C  &kp R                             &kp F        &lt 8 Z
-                     &kp Y    &kp I        &kp E               &hm LSHFT A     &lt 9 PERIOD       &kp D        &hm RSHFT T      &kp S                             &kp N        &kp B
-&mt LEFT_WIN ESCAPE  &kp J    &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT            &kp W        &kp M            &hm RIGHT_ALT L                   &hm RCTRL P  &kp V    &rwin_explorer_pp_layer12 RIGHT_WIN 0
-                                           &lalt_tab_back 1 0  &lt_bs_spc 2 0  &lt 3 ENTER        &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_forward_mouse 6 0
+                     &kp Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 8 QUESTION    &lt 9 G      &hm RIGHT_WIN C  &kp R                             &kp F        &kp Z
+                     &kp Y  &kp I        &kp E               &hm LSHFT A     &lt 8 PERIOD      &kp D        &hm RSHFT T      &kp S                             &kp N        &kp B
+&mt LEFT_WIN ESCAPE  &kp J  &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT           &kp W        &kp M            &hm RIGHT_ALT L                   &hm RCTRL P  &kp V  &rwin_explorer_pp_layer12 RIGHT_WIN 0
+                                         &lalt_tab_back 7 0  &lt_bs_spc 2 0  &lt 3 ENTER       &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_forward_mouse 1 0
             >;
         };
 
-        L1-acs {
-            label = "L1-acs";
+        L6-cs {
+            label = "L6-cs";
             bindings = <
-                          &kp LA(TAB)        &kp LC(LS(LA(H)))  &kp LC(LS(LA(O)))      &kp LC(LS(LA(U)))  &kp LC(LS(LA(QUESTION)))    &kp LC(LS(LA(G)))         &kp LC(LS(LA(C)))         &kp LC(LS(LA(R)))         &kp LC(LS(LA(F)))  &kp LC(LS(LA(Z)))
-                          &kp LC(LS(LA(Y)))  &kp LC(LS(LA(I)))  &kp LC(LS(LA(E)))      &kp LC(LS(LA(A)))  &kp LC(LS(LA(DOT)))         &kp LC(LS(LA(D)))         &kp LC(LS(LA(T)))         &kp LC(LS(LA(S)))         &kp LC(LS(LA(N)))  &kp LC(LS(LA(B)))
-&kp LC(LS(LA(NUMBER_1)))  &kp LC(LS(LA(J)))  &kp LC(LS(LA(X)))  &kp LC(LS(LA(COMMA)))  &kp LC(LS(LA(K)))  &kp LC(LS(LA(SQT)))         &kp LC(LS(LA(W)))         &kp LC(LS(LA(M)))         &kp LC(LS(LA(L)))         &kp LC(LS(LA(P)))  &kp LC(LS(LA(V)))  &kp LC(LA(LS(NUMBER_5)))
-                                                                &trans                 &kp LS(TAB)        &kp C_PLAY_PAUSE            &kp LC(LS(LA(NUMBER_2)))  &kp LC(LS(LA(NUMBER_3)))  &kp LC(LS(LA(NUMBER_4)))
+                      &kp LC(LS(Q))  &kp LC(LS(H))  &kp LC(LS(O))         &kp LC(LS(U))         &kp LC(LS(QUESTION))    &kp LC(LS(G))   &kp LC(LS(C))         &kp LC(LS(R))  &kp LC(LS(F))  &kp LC(LS(Z))
+                      &kp LC(LS(Y))  &kp LC(LS(I))  &kp LC(LS(E))         &kp LC(LS(A))         &kp LC(LS(DOT))         &kp LC(LS(D))   &kp LC(LS(T))         &kp LC(LS(S))  &kp LC(LS(N))  &kp LC(LS(B))
+&kp LC(LS(NUMBER_1))  &kp LC(LS(J))  &kp LC(LS(X))  &kp LC(LS(COMMA))     &kp LC(LS(K))         &kp LC(LS(SQT))         &kp LC(LS(W))   &kp LC(LS(M))         &kp LC(LS(L))  &kp LC(LS(P))  &kp LC(LS(V))  &kp LC(LS(NUMBER_7))
+                                                    &kp LC(LS(NUMBER_2))  &kp LC(LS(NUMBER_3))  &kp LC(LS(NUMBER_4))    &kp LC(LS(N5))  &kp LC(LS(NUMBER_6))  &trans
             >;
         };
 
@@ -388,10 +388,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp LC(NUMBER_6)  &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)          &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN     &kp F7              &kp F8              &kp F9  &kp F12
-                    &kp LC(W)         &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))  &kp PG_UP                  &kp HOME            &kp F4              &kp F5              &kp F6  &kp F11
-&kp LC(LS(ESCAPE))  &kp LC(LS(T))     &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)     &kp PAGE_DOWN              &kp END             &kp F1              &kp F2              &kp F3  &kp F10  &kp LS(LA(LC(F4)))
-                                                              &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none                      &kp LS(LA(LC(F1)))  &kp LS(LA(LC(F2)))  &kp LS(LA(LC(F3)))
+                    &kp LC(NUMBER_6)  &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)          &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN  &kp F7          &kp F8          &kp F9  &kp F12
+                    &kp LC(W)         &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))  &kp PG_UP                  &kp HOME         &kp F4          &kp F5          &kp F6  &kp F11
+&kp LS(LC(ESCAPE))  &kp LC(LS(T))     &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)     &kp PAGE_DOWN              &kp END          &kp F1          &kp F2          &kp F3  &kp F10  &kp LS(LC(F4))
+                                                              &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none                      &kp LS(LC(F1))   &kp LS(LC(F2))  &kp LS(LC(F3))
             >;
         };
 
@@ -412,17 +412,17 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                              &kp CARET          &kp DOUBLE_QUOTES  &kp EXCLAMATION        &kp LA(LC(SQT))       &kp LS(LG(S))    &kp LS(PRINTSCREEN)  &kp LEFT_BRACKET          &kp HASH                   &kp RIGHT_BRACKET      &key_repeat
-                              &kp PIPE           &kp UNDERSCORE     &kp SEMICOLON          &kp SLASH             &kp AT_SIGN      &kp LEFT_BRACE       &kp LEFT_PARENTHESIS      &kp ASTERISK               &kp RIGHT_PARENTHESIS  &kp DOLLAR
-&kp LA(LC(NON_US_BACKSLASH))  &kp LA(LC(SLASH))  &kp AMPERSAND      &kp PERCENT            &kp NON_US_BACKSLASH  &kp GRAVE        &kp RIGHT_BRACE      &kp LESS_THAN             &kp LA(LC(PERIOD))         &kp GREATER_THAN       &kp TILDE    &kp LA(LC(COMMA))
-                                                                    &kp LA(LC(SEMICOLON))  &kp MINUS             &kp COLON        &none                &kp LA(LC(LEFT_BRACKET))  &kp LA(LC(RIGHT_BRACKET))
+                &kp CARET       &kp DOUBLE_QUOTES  &kp EXCLAMATION  &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))    &kp LS(PRINTSCREEN)  &kp LEFT_BRACKET      &kp HASH        &kp RIGHT_BRACKET      &key_repeat
+                &kp PIPE        &kp UNDERSCORE     &kp SEMICOLON    &kp SLASH             &kp AT_SIGN             &kp LEFT_BRACE       &kp LEFT_PARENTHESIS  &kp ASTERISK    &kp RIGHT_PARENTHESIS  &kp DOLLAR
+&kp LS(LA(F1))  &kp LS(LA(F2))  &kp AMPERSAND      &kp PERCENT      &kp NON_US_BACKSLASH  &kp GRAVE               &kp RIGHT_BRACE      &kp LESS_THAN         &kp LA(LC(F5))  &kp GREATER_THAN       &kp TILDE    &kp LS(LA(F6))
+                                                   &kp LS(LA(F3))   &kp MINUS             &kp COLON               &none                &kp LS(LA(F4))        &kp LS(LA(F5))
             >;
         };
 
-        L5-fn24 {
+        L5-sa-reverse {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
-            label = "L5-fn";
+            label = "L5-sa";
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -436,45 +436,25 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp LS(LA(LC(F15)))  &kp F22  &kp LS(LA(LC(F16)))  &kp F24              &kp LA(LC(F17))       &kp LA(LC(F19))         &kp LA(LC(F20))   &kp LA(LG(UP_ARROW))    &kp LS(F10)             &kt LEFT_ALT
-                    &kp F17              &kp F18  &kp F19              &kp F20              &kp LA(LC(F18))       &kp LS(LA(LC(LG(F2))))  &kp LA(LG(LEFT))  &kp LA(LG(DOWN))        &kp LA(LG(RIGHT))       &kp LS(LA(LC(F14)))
-&kp LA(LC(LS(F5)))  &kp F13              &kp F14  &kp F15              &kp LS(LA(LC(F13)))  &kp CAPS              &kp LS(LA(LC(LG(F1))))  &mkp LCLK         &kp LS(LA(LC(LG(F3))))  &kp LS(LA(LC(LG(F4))))  &kp LS(LA(LC(F11)))  &kp LA(LC(LS(F12)))
-                                                  &kp LA(LC(LS(F6)))   &kp LA(LC(LS(F7)))   &kp LA(LC(LS(F8)))    &kp LA(LC(LS(F9)))      &none             &kp LA(LC(LS(F10)))
+                      &kp LS(LA(Z))  &kp LS(LA(F))  &kp LS(LA(R))         &kp LS(LA(C))         &kp LS(LA(G))           &kp LS(LA(QUESTION))  &kp LS(LA(C))     &kp LA(LG(UP_ARROW))  &kp LS(F10)        &kt LEFT_ALT
+                      &kp LS(LA(B))  &kp LS(LA(N))  &kp LS(LA(S))         &kp LS(LA(T))         &kp LS(LA(D))           &kp LS(LA(PERIOD))    &kp LA(LG(LEFT))  &kp LA(LG(DOWN))      &kp LA(LG(RIGHT))  &kp LS(LA(Y))
+&kp LS(LA(NUMBER_1))  &kp LS(LA(V))  &kp LS(LA(P))  &kp LS(LA(L))         &kp LS(LA(M))         &kp CAPS                &kp LS(LA(SQT))       &mkp LCLK         &kp LS(LA(COMMA))     &kp LS(LA(X))      &kp LS(LA(J))  &kp LS(LA(N7))
+                                                    &kp LS(LA(NUMBER_2))  &kp LS(LA(NUMBER_3))  &kp LS(LA(NUMBER_4))    &kp LS(LA(N5))        &none             &kp LS(LA(NUMBER_6))
             >;
         };
 
-        L6-cs {
-            label = "L6-cs";
+        L1-acs {
+            label = "L1-acs";
             bindings = <
-                      &kp LC(LS(Q))  &kp LC(LS(H))  &kp LC(LS(O))         &kp LC(LS(U))         &kp LC(LS(QUESTION))    &kp LC(LS(G))         &kp LC(LS(C))         &kp LC(LS(R))  &kp LC(LS(F))  &kp LC(LS(Z))
-                      &kp LC(LS(Y))  &kp LC(LS(I))  &kp LC(LS(E))         &kp LC(LS(A))         &kp LC(LS(DOT))         &kp LC(LS(D))         &kp LC(LS(T))         &kp LC(LS(S))  &kp LC(LS(N))  &kp LC(LS(B))
-&kp LC(LS(NUMBER_1))  &kp LC(LS(J))  &kp LC(LS(X))  &kp LC(LS(COMMA))     &kp LC(LS(K))         &kp LC(LS(SQT))         &kp LC(LS(W))         &kp LC(LS(M))         &kp LC(LS(L))  &kp LC(LS(P))  &kp LC(LS(V))  &kp LC(LS(NUMBER_7))
-                                                    &kp LC(LS(NUMBER_2))  &kp LC(LS(NUMBER_3))  &kp LC(LS(NUMBER_4))    &kp LC(LS(NUMBER_5))  &kp LC(LS(NUMBER_6))  &trans
+                          &kp LA(TAB)        &kp LC(LS(LA(H)))  &kp LC(LS(LA(O)))      &kp LC(LS(LA(U)))  &kp LC(LS(LA(QUESTION)))    &kp LC(LS(LA(G)))         &kp LC(LS(LA(C)))         &kp LC(LS(LA(R)))         &kp LC(LS(LA(F)))  &kp LC(LS(LA(Z)))
+                          &kp LC(LS(LA(Y)))  &kp LC(LS(LA(I)))  &kp LC(LS(LA(E)))      &kp LC(LS(LA(A)))  &kp LC(LS(LA(DOT)))         &kp LC(LS(LA(D)))         &kp LC(LS(LA(T)))         &kp LC(LS(LA(S)))         &kp LC(LS(LA(N)))  &kp LC(LS(LA(B)))
+&kp LC(LS(LA(NUMBER_1)))  &kp LC(LS(LA(J)))  &kp LC(LS(LA(X)))  &kp LC(LS(LA(COMMA)))  &kp LC(LS(LA(K)))  &kp LC(LS(LA(SQT)))         &kp LC(LS(LA(W)))         &kp LC(LS(LA(M)))         &kp LC(LS(LA(L)))         &kp LC(LS(LA(P)))  &kp LC(LS(LA(V)))  &kp LC(LA(LS(NUMBER_5)))
+                                                                &trans                 &kp C_PLAY_PAUSE   &kp C_MUTE                  &kp LC(LS(LA(NUMBER_2)))  &kp LC(LS(LA(NUMBER_3)))  &kp LC(LS(LA(NUMBER_4)))
             >;
         };
 
-        L7-as {
-            label = "L7-as";
-            bindings = <
-                      &trans         &kp LS(LA(H))  &kp LS(LA(O))         &kp LS(LA(U))         &kp LS(LA(QUESTION))    &kp LS(LA(G))   &kp LS(LA(C))         &kp LS(LA(R))   &kp LS(LA(F))  &kp LS(LA(Z))
-                      &kp LS(LA(Y))  &kp LS(LA(I))  &kp LS(LA(E))         &kp LS(LA(A))         &kp LS(LA(DOT))         &kp LS(LA(D))   &kp LS(LA(T))         &kp LS(LA(S))   &kp LS(LA(N))  &kp LS(LA(B))
-&kp LS(LA(NUMBER_1))  &kp LS(LA(J))  &kp LS(LA(X))  &kp LS(LA(COMMA))     &kp LS(LA(K))         &kp LS(LA(SQT))         &kp LS(LA(W))   &kp LS(LA(M))         &kp LS(LA(L))   &kp LS(LA(P))  &kp LS(LA(V))  &kp LS(LA(NUMBER_8))
-                                                    &kp LS(LA(NUMBER_2))  &kp LS(LA(NUMBER_3))  &kp LS(LA(NUMBER_4))    &kp LS(LA(N5))  &kp LS(LA(NUMBER_6))  &kp LS(LA(N7))
-            >;
-        };
-
-        L8-ac {
-            label = "L8-ac";
-            bindings = <
-                      &kp LC(LA(Q))  &kp LC(LA(H))  &kp LC(LA(O))         &kp LC(LA(U))         &kp LC(LA(QUESTION))    &kp LC(LA(G))         &kp LC(LA(C))         &kp LC(LA(R))         &kp LC(LA(A))  &trans
-                      &kp LC(LA(Y))  &kp LC(LA(I))  &kp LC(LA(E))         &kp LC(LA(A))         &kp LC(LA(DOT))         &kp LC(LA(D))         &kp LC(LA(T))         &kp LC(LA(S))         &kp LC(LA(N))  &kp LC(LA(B))
-&kp LC(LA(NUMBER_1))  &kp LC(LA(J))  &kp LC(LA(X))  &kp LC(LA(COMMA))     &kp LC(LA(K))         &kp LC(LA(SQT))         &kp LC(LA(W))         &kp LC(LA(M))         &kp LC(LA(L))         &kp LC(LA(P))  &kp LC(LA(V))  &kp LA(LC(NUMBER_8))
-                                                    &kp LC(LA(NUMBER_2))  &kp LC(LA(NUMBER_3))  &kp LC(LA(NUMBER_4))    &kp LC(LA(NUMBER_5))  &kp LC(LA(NUMBER_6))  &kp LC(LA(NUMBER_7))
-            >;
-        };
-
-        L9-meta {
-            label = "L9-edit+";
+        L7-meta {
+            label = "L7-meda";
             bindings = <
                         &kp LC(LS(LA(LG(Q))))  &kp LC(LS(LA(LG(H))))  &kp LC(LS(LA(LG(O))))      &kp LC(LS(LA(LG(U))))   &kp LC(LS(LA(LG(QUESTION))))    &kp LC(LS(LA(LG(G))))   &kp LC(LS(LA(LG(C))))    &kp LC(LS(LA(LG(R))))    &kp LC(LS(LA(LG(F))))  &kp LC(LS(LA(LG(Z))))
                         &kp LC(LS(LA(LG(Y))))  &kp LC(LS(LA(LG(I))))  &kp LC(LS(LA(LG(E))))      &kp LC(LS(LA(LG(A))))   &trans                          &kp LC(LS(LA(LG(D))))   &kp LC(LS(LA(LG(T))))    &kp LC(LS(LA(LG(S))))    &kp LC(LS(LA(LG(N))))  &kp LC(LS(LA(LG(B))))
@@ -483,10 +463,10 @@
             >;
         };
 
-        L10-blue {
+        L8-blue-numpad {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
-            label = "L10-blue";
+            label = "L8-blue-numpad";
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -503,34 +483,25 @@
                 &out OUT_TOG   &bt BT_PRV     &bt BT_CLR     &bt BT_NXT     &trans           &kp KP_MULTIPLY          &kp KP_NUMBER_7  &kp KP_NUMBER_8          &kp KP_NUMBER_9  &kp KP_PLUS
                 &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &kp KP_DIVIDE            &kp KP_NUMBER_4  &kp KP_NUMBER_5          &kp KP_NUMBER_6  &kp KP_MINUS
 &bt BT_CLR_ALL  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &kp KP_DOT               &kp KP_NUMBER_1  &kp KP_NUMBER_2          &kp KP_NUMBER_3  &kp KP_COMMA  &kp KP_ENTER
-                                              &kp C_POWER    &tog 12        &kp KP_NUM       &kp KP_LEFT_PARENTHESIS  &kp KP_NUMBER_0  &kp KP_LEFT_PARENTHESIS
+                                              &kp C_POWER    &tog 10        &kp KP_NUM       &kp KP_LEFT_PARENTHESIS  &kp KP_NUMBER_0  &kp KP_LEFT_PARENTHESIS
             >;
         };
 
-        L11-mouse {
+        L9-mouse {
             bindings = <
-            &trans  &kp C_NEXT    &kp UP_ARROW    &kp C_PREV          &trans                 &trans          &trans             &mmv MOVE_UP     &kp K_APPLICATION  &kp BACKSPACE
-            &trans  &kp LEFT      &kp DOWN        &kp RIGHT           &kp C_AC_PROPERTIES    &msc SCRL_UP    &mmv MOVE_LEFT     &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &mkp MB4
-&kp ESCAPE  &trans  &kp C_REWIND  &kp C_AC_PROPS  &kp C_FAST_FORWARD  &trans                 &msc SCRL_DOWN  &mkp LCLK          &mkp MCLK        &mkp RCLK          &mkp MB5       &trans
-                                  &trans          &trans              &trans                 &msc SCRL_LEFT  &kp K_APPLICATION  &back_to_layer0
+        &kp F21  &kp F22  &kp F23      &kp F24  &trans    &to 0           &to 9            &mmv MOVE_UP    &kp K_APPLICATION  &trans
+        &kp F17  &kp F18  &kp F19      &kp F20  &trans    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mkp MB4
+&trans  &kp F13  &kp F14  &kp F15      &kp F16  &trans    &msc SCRL_DOWN  &mkp LCLK        &mkp MCLK       &mkp RCLK          &mkp MB5  &to 0
+                          &bootloader  &trans   &trans    &msc SCRL_LEFT  &msc SCRL_RIGHT  &bootloader
             >;
         };
 
-        L12-game {
+        L10-game {
             bindings = <
             &kp Q  &kp W  &kp E            &kp R        &kp T     &kp Y   &kp U       &kp I      &kp O       &kp P
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
 &kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
-                          &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
-            >;
-        };
-
-        layer_13 {
-            bindings = <
-        &trans  &trans  &trans       &trans  &trans    &trans  &to 11  &trans       &trans  &trans
-        &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans  &trans       &trans  &trans    &trans  &trans  &trans       &trans  &trans  &trans
-                        &bootloader  &trans  &trans    &trans  &trans  &bootloader
+                          &lt 7 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
             >;
         };
     };
