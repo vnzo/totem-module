@@ -93,21 +93,21 @@
 
             /* 1. The Tap-Dance (The Actions) */
 
-            td_explorer_pp_layer12: td_explorer_pp_layer12 {
+            td_explorer_pp: td_explorer_pp {
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <300>;
-                bindings = <&kp LG(E)>, <&kp C_PLAY_PAUSE>, <&tog 10>;
+                bindings = <&kp LG(E)>, <&kp C_PLAY_PAUSE>;
             };
 
             /* 2. The Hold-Tap (The Logic) */
 
-            rwin_explorer_pp_layer12: rwin_explorer_pp_layer12 {
+            rwin_explorer_pp: rwin_explorer_pp {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 flavor = "tap-preferred";
                 tapping-term-ms = <200>;
-                bindings = <&kp>, <&td_explorer_pp_layer12>;
+                bindings = <&kp>, <&td_explorer_pp>;
             };
 
             /* 1. The Mod-Morph (Normal = Backspace, Shift = Space) */
@@ -172,15 +172,6 @@
                 bindings = <&kp HOME>, <&kp C_AC_FORWARD>;
 
                 label = "TD_HOME_END_MOUSE";
-            };
-
-            back_to_layer0: back_to_layer0 {
-                compatible = "zmk,behavior-tap-dance";
-                #binding-cells = <0>;
-                tapping-term-ms = <200>;
-                bindings = <&msc SCRL_RIGHT>, <&msc SCRL_RIGHT>, <&tog 9>;
-
-                label = "BACK_TO_LAYER0";
             };
         };
     };
@@ -331,14 +322,14 @@
 
             bindings = <
                      &kp Q  &kp H        &kp O               &hm LEFT_WIN U  &lt 8 QUESTION    &lt 9 G      &hm RIGHT_WIN C  &kp R                             &kp F        &kp Z
-                     &kp Y  &kp I        &kp E               &hm LSHFT A     &lt 8 PERIOD      &kp D        &hm RSHFT T      &kp S                             &kp N        &kp B
-&mt LEFT_WIN ESCAPE  &kp J  &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT           &kp W        &kp M            &hm RIGHT_ALT L                   &hm RCTRL P  &kp V  &rwin_explorer_pp_layer12 RIGHT_WIN 0
-                                         &lalt_tab_back 7 0  &lt_bs_spc 2 0  &lt 3 ENTER       &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_forward_mouse 1 0
+                     &kp Y  &kp I        &kp E               &hm LSHFT A     &lt 7 PERIOD      &kp D        &hm RSHFT T      &kp S                             &kp N        &kp B
+&mt LEFT_WIN ESCAPE  &kp J  &hm LCTRL X  &hm LEFT_ALT COMMA  &kp K           &kp SQT           &kp W        &kp M            &hm RIGHT_ALT L                   &hm RCTRL P  &kp V  &rwin_explorer_pp RIGHT_WIN 0
+                                         &lalt_tab_back 1 0  &lt_bs_spc 2 0  &lt 3 ENTER       &lt 4 SPACE  &lt 5 DELETE     &ralt_del_home_forward_mouse 6 0
             >;
         };
 
-        L6-cs {
-            label = "L6-cs";
+        L1-cs {
+            label = "L1-cs";
             bindings = <
                       &kp LC(LS(Q))  &kp LC(LS(H))  &kp LC(LS(O))         &kp LC(LS(U))         &kp LC(LS(QUESTION))    &kp LC(LS(G))   &kp LC(LS(C))         &kp LC(LS(R))  &kp LC(LS(F))  &kp LC(LS(Z))
                       &kp LC(LS(Y))  &kp LC(LS(I))  &kp LC(LS(E))         &kp LC(LS(A))         &kp LC(LS(DOT))         &kp LC(LS(D))   &kp LC(LS(T))         &kp LC(LS(S))  &kp LC(LS(N))  &kp LC(LS(B))
@@ -443,8 +434,8 @@
             >;
         };
 
-        L1-acs {
-            label = "L1-acs";
+        L6-acs {
+            label = "L6-acs";
             bindings = <
                           &kp LA(TAB)        &kp LC(LS(LA(H)))  &kp LC(LS(LA(O)))      &kp LC(LS(LA(U)))  &kp LC(LS(LA(QUESTION)))    &kp LC(LS(LA(G)))         &kp LC(LS(LA(C)))         &kp LC(LS(LA(R)))         &kp LC(LS(LA(F)))  &kp LC(LS(LA(Z)))
                           &kp LC(LS(LA(Y)))  &kp LC(LS(LA(I)))  &kp LC(LS(LA(E)))      &kp LC(LS(LA(A)))  &kp LC(LS(LA(DOT)))         &kp LC(LS(LA(D)))         &kp LC(LS(LA(T)))         &kp LC(LS(LA(S)))         &kp LC(LS(LA(N)))  &kp LC(LS(LA(B)))
@@ -487,7 +478,7 @@
             >;
         };
 
-        L9-mouse {
+        L9-mouse-f24 {
             bindings = <
         &kp F21  &kp F22  &kp F23      &kp F24  &trans    &to 0           &to 9            &mmv MOVE_UP    &kp K_APPLICATION  &trans
         &kp F17  &kp F18  &kp F19      &kp F20  &trans    &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mkp MB4
@@ -501,7 +492,7 @@
             &kp Q  &kp W  &kp E            &kp R        &kp T     &kp Y   &kp U       &kp I      &kp O       &kp P
             &kp A  &kp S  &kp D            &kp F        &kp G     &kp H   &kp J       &kp K      &kp L       &kp SEMICOLON
 &kp ESCAPE  &kp Z  &kp X  &kp C            &kp V        &kp B     &kp N   &kp M       &kp COMMA  &kp PERIOD  &kp SLASH      &trans
-                          &lt 7 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
+                          &lt 1 BACKSPACE  &lt 2 SPACE  &trans    &trans  &kp DELETE  &to 0
             >;
         };
     };
