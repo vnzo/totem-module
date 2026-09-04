@@ -234,9 +234,9 @@
             key-positions = <21 11>;
         };
 
-        todo3 {
+        pageup2 {
             timeout-ms = <120>;
-            bindings = <&kp LCTRL>;
+            bindings = <&kp PAGE_UP>;
             key-positions = <12 22>;
         };
 
@@ -246,9 +246,9 @@
             key-positions = <18 30>;
         };
 
-        todo4 {
+        pagedn2 {
             timeout-ms = <120>;
-            bindings = <&kp RCTRL>;
+            bindings = <&kp PAGE_DOWN>;
             key-positions = <17 29>;
         };
 
