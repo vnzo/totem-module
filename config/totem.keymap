@@ -355,10 +355,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-          &kp LC(LG(T))  &kp LC(C)  &kp UP_ARROW       &kp LA(LC(Z))  &kp LA(LS(Q))       &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8            &kp NUMBER_9  &kp PLUS
-          &kp LA(F4)     &kp LEFT   &kp DOWN           &kp RIGHT      &kp LC(F)           &kp KP_DIVIDE    &kp NUMBER_4  &kp NUMBER_5            &kp NUMBER_6  &kp MINUS
-&kp HOME  &kp INS        &kp LC(X)  &kp LC(Z)          &kp LC(V)      &kp LS(INS)         &kp PERIOD       &kp NUMBER_1  &kp NUMBER_2            &kp NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
-                                    &td_backward_prev  &none          &td_forward_next    &kp EQUAL        &kp NUMBER_0  &kp LS(LA(LC(PERIOD)))
+          &kp LC(LG(T))  &kp LC(C)        &kp UP_ARROW        &hm LEFT_WIN LA(LC(Z))  &kp LA(LS(Q))       &kp KP_MULTIPLY  &hm RIGHT_WIN NUMBER_7    &kp NUMBER_8            &kp NUMBER_9        &kp PLUS
+          &kp LA(F4)     &kp LEFT         &kp DOWN            &hm LEFT_SHIFT RIGHT    &kp LC(F)           &kp KP_DIVIDE    &hm RIGHT_SHIFT NUMBER_4  &kp NUMBER_5            &kp NUMBER_6        &kp MINUS
+&kp HOME  &kp INS        &hm LCTRL LC(X)  &hm LEFT_ALT LC(Z)  &kp LC(V)               &kp LS(INS)         &kp PERIOD       &kp NUMBER_1              &hm RIGHT_ALT NUMBER_2  &hm RCTRL NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
+                                          &td_backward_prev   &none                   &td_forward_next    &kp EQUAL        &kp NUMBER_0              &kp LS(LA(LC(PERIOD)))
             >;
         };
 
@@ -379,10 +379,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                    &kp LC(NUMBER_6)  &kp LC(PAGE_UP)         &kp LC(PAGE_DOWN)  &kp LG(D)          &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN  &kp F7          &kp F8          &kp F9  &kp F12
-                    &kp LC(W)         &kp LG(LC(LEFT_ARROW))  &kp LC(LG(DOWN))   &kp LC(LG(RIGHT))  &kp PG_UP                  &kp HOME         &kp F4          &kp F5          &kp F6  &kp F11
-&kp LS(LC(ESCAPE))  &kp LC(LS(T))     &kp LA(LS(ESCAPE))      &kp LC(LG(F4))     &kp LA(ESCAPE)     &kp PAGE_DOWN              &kp END          &kp F1          &kp F2          &kp F3  &kp F10  &kp LS(LC(F4))
-                                                              &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none                      &kp LS(LC(F1))   &kp LS(LC(F2))  &kp LS(LC(F3))
+                    &kp LC(NUMBER_6)  &kp LC(PAGE_UP)           &kp LC(PAGE_DOWN)        &hm LEFT_WIN LG(D)            &kp LA(LG(PRINTSCREEN))    &kp PRINTSCREEN  &hm RIGHT_WIN F7  &kp F8            &kp F9        &kp F12
+                    &kp LC(W)         &kp LG(LC(LEFT_ARROW))    &kp LC(LG(DOWN))         &hm LEFT_SHIFT LC(LG(RIGHT))  &kp PG_UP                  &kp HOME         &hm RSHIFT F4     &kp F5            &kp F6        &kp F11
+&kp LS(LC(ESCAPE))  &kp LC(LS(T))     &hm LCTRL LS(LA(ESCAPE))  &hm LEFT_ALT LC(LG(F4))  &kp LA(ESCAPE)                &kp PAGE_DOWN              &kp END          &kp F1            &hm RIGHT_ALT F2  &hm RCTRL F3  &kp F10  &kp LS(LC(F4))
+                                                                &kp C_VOLUME_DOWN        &kp C_VOLUME_UP               &none                      &kp LS(LC(F1))   &kp LS(LC(F2))    &kp LS(LC(F3))
             >;
         };
 
@@ -403,10 +403,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                &kp CARET       &kp DOUBLE_QUOTES  &kp EXCLAMATION  &kp LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))    &kp LS(PRINTSCREEN)  &kp LEFT_BRACKET      &kp HASH        &kp RIGHT_BRACKET      &key_repeat
-                &kp PIPE        &kp UNDERSCORE     &kp SEMICOLON    &kp SLASH             &kp AT_SIGN             &kp LEFT_BRACE       &kp LEFT_PARENTHESIS  &kp ASTERISK    &kp RIGHT_PARENTHESIS  &kp DOLLAR
-&kp LS(LA(F1))  &kp LS(LA(F2))  &kp AMPERSAND      &kp PERCENT      &kp NON_US_BACKSLASH  &kp GRAVE               &kp RIGHT_BRACE      &kp LESS_THAN         &kp LA(LC(F5))  &kp GREATER_THAN       &kp TILDE    &kp LS(LA(F6))
-                                                   &kp LS(LA(F3))   &kp MINUS             &kp COLON               &none                &kp LS(LA(F4))        &kp LS(LA(F5))
+                &kp CARET       &kp DOUBLE_QUOTES    &kp EXCLAMATION       &hm LEFT_WIN LA(LC(NUMBER_8))  &kp LA(LC(NUMBER_9))    &kp LS(PRINTSCREEN)  &hm RIGHT_WIN LEFT_BRACKET       &kp HASH                  &kp RIGHT_BRACKET       &key_repeat
+                &kp PIPE        &kp UNDERSCORE       &kp SEMICOLON         &hm LEFT_SHIFT SLASH           &kp AT_SIGN             &kp LEFT_BRACE       &hm LEFT_SHIFT LEFT_PARENTHESIS  &kp ASTERISK              &kp RIGHT_PARENTHESIS   &kp DOLLAR
+&kp LS(LA(F1))  &kp LS(LA(F2))  &hm LCTRL AMPERSAND  &hm LEFT_ALT PERCENT  &kp NON_US_BACKSLASH           &kp GRAVE               &kp RIGHT_BRACE      &kp LESS_THAN                    &hm RIGHT_ALT LA(LC(F5))  &hm RCTRL GREATER_THAN  &kp TILDE    &kp LS(LA(F6))
+                                                     &kp LS(LA(F3))        &kp MINUS                      &kp COLON               &none                &kp LS(LA(F4))                   &kp LS(LA(F5))
             >;
         };
 
@@ -427,10 +427,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                      &kp LS(LA(Z))  &kp LS(LA(F))  &kp LS(LA(R))         &kp LS(LA(C))         &kp LS(LA(G))           &kp LS(LA(QUESTION))  &kp LS(LA(C))     &kp LA(LG(UP_ARROW))  &kp LS(F10)        &kt LEFT_ALT
-                      &kp LS(LA(B))  &kp LS(LA(N))  &kp LS(LA(S))         &kp LS(LA(T))         &kp LS(LA(D))           &kp LS(LA(PERIOD))    &kp LA(LG(LEFT))  &kp LA(LG(DOWN))      &kp LA(LG(RIGHT))  &kp LS(LA(Y))
-&kp LS(LA(NUMBER_1))  &kp LS(LA(V))  &kp LS(LA(P))  &kp LS(LA(L))         &kp LS(LA(M))         &kp CAPS                &kp LS(LA(SQT))       &mkp LCLK         &kp LS(LA(COMMA))     &kp LS(LA(X))      &kp LS(LA(J))  &kp LS(LA(N7))
-                                                    &kp LS(LA(NUMBER_2))  &kp LS(LA(NUMBER_3))  &kp LS(LA(NUMBER_4))    &kp LS(LA(N5))        &none             &kp LS(LA(NUMBER_6))
+                      &kp LS(LA(Z))  &kp LS(LA(F))        &kp LS(LA(R))           &hm LEFT_WIN LS(LA(C))    &kp LS(LA(G))           &kp LS(LA(QUESTION))  &hm RIGHT_WIN LS(LA(U))       &kp LA(LG(UP_ARROW))         &kp LS(F10)          &kt LEFT_ALT
+                      &kp LS(LA(B))  &kp LS(LA(N))        &kp LS(LA(S))           &hm LEFT_SHIFT LS(LA(T))  &kp LS(LA(D))           &kp LS(LA(PERIOD))    &hm RIGHT_SHIFT LA(LG(LEFT))  &kp LA(LG(DOWN))             &kp LA(LG(RIGHT))    &kp LS(LA(Y))
+&kp LS(LA(NUMBER_1))  &kp LS(LA(V))  &hm LCTRL LS(LA(P))  &hm LEFT_ALT LS(LA(L))  &kp LS(LA(M))             &kp CAPS                &kp LS(LA(SQT))       &mkp LCLK                     &hm RIGHT_ALT LS(LA(COMMA))  &hm RCTRL LS(LA(X))  &kp LS(LA(J))  &kp LS(LA(N7))
+                                                          &kp LS(LA(NUMBER_2))    &kp LS(LA(NUMBER_3))      &kp LS(LA(NUMBER_4))    &kp LS(LA(N5))        &none                         &kp LS(LA(NUMBER_6))
             >;
         };
 
