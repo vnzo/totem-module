@@ -356,7 +356,7 @@
 
             bindings = <
           &kp LC(LG(T))  &kp LC(C)        &kp UP_ARROW        &hm LEFT_WIN LA(LC(Z))  &kp LA(LS(Q))       &kp KP_MULTIPLY  &hm RIGHT_WIN NUMBER_7    &kp NUMBER_8            &kp NUMBER_9        &kp PLUS
-          &kp LA(F4)     &kp LEFT         &kp DOWN            &hm LEFT_SHIFT RIGHT    &kp LC(F)           &kp KP_DIVIDE    &hm RIGHT_SHIFT NUMBER_4  &kp NUMBER_5            &kp NUMBER_6        &kp MINUS
+          &kp LA(F4)     &kp LEFT         &kp DOWN            &kp RIGHT               &kp LC(F)           &kp KP_DIVIDE    &hm RIGHT_SHIFT NUMBER_4  &kp NUMBER_5            &kp NUMBER_6        &kp MINUS
 &kp HOME  &kp INS        &hm LCTRL LC(X)  &hm LEFT_ALT LC(Z)  &kp LC(V)               &kp LS(INS)         &kp PERIOD       &kp NUMBER_1              &hm RIGHT_ALT NUMBER_2  &hm RCTRL NUMBER_3  &kp PAUSE_BREAK  &kp C_AL_CALCULATOR
                                           &td_backward_prev   &none                   &td_forward_next    &kp EQUAL        &kp NUMBER_0              &kp LS(LA(LC(PERIOD)))
             >;
