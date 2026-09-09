@@ -222,7 +222,7 @@
             bindings = <&kp TAB>;
         };
 
-        todo2 {
+        todo {
             timeout-ms = <100>;
             bindings = <&kp END>;
             key-positions = <7 8>;
@@ -264,8 +264,8 @@
             timeout-ms = <100>;
         };
 
-        todo6 {
-            bindings = <&kp GREATER_THAN>;
+        end2 {
+            bindings = <&kp END>;
             key-positions = <14 25>;
             timeout-ms = <100>;
         };
