@@ -222,9 +222,9 @@
             bindings = <&kp TAB>;
         };
 
-        todo {
+        playforward {
             timeout-ms = <100>;
-            bindings = <&kp END>;
+            bindings = <&td_forward_next>;
             key-positions = <7 8>;
         };
 
