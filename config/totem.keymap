@@ -222,9 +222,9 @@
             bindings = <&kp TAB>;
         };
 
-        playforward {
+        mpc_seek {
             timeout-ms = <100>;
-            bindings = <&td_forward_next>;
+            bindings = <&kp LS(LA(LC(F8)))>;
             key-positions = <7 8>;
         };
 
