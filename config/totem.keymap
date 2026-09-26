@@ -223,10 +223,10 @@
     combos {
         compatible = "zmk,combos";
 
-        esc {
+        tab {
             timeout-ms = <50>;
             key-positions = <22 23>; // This assumes position 2 and 3 on your keyboard. Adjust as needed.
-            bindings = <&kp ESCAPE>;
+            bindings = <&kp TAB>;
             layers = <0>; // This combo will only work on layer 0.
         };
 
@@ -236,15 +236,15 @@
             bindings = <&kp DEL>;
         };
 
-        tab {
+        mpc_seek_bk {
             timeout-ms = <40>;
             key-positions = <1 2>;
-            bindings = <&kp TAB>;
+            bindings = <&kp C_REWIND>;
         };
 
-        mpc_seek {
+        mpc_seek_ff {
             timeout-ms = <100>;
-            bindings = <&kp LS(LA(LC(F8)))>;
+            bindings = <&kp C_FAST_FORWARD>;
             key-positions = <7 8>;
         };
 
